@@ -1,0 +1,19 @@
+.header
+  .header__up
+    .header__up__right
+      %h2 Raise Hand
+      %p 起業家が気軽に繋がれるマッチングプラットフォーム
+    .header__up__left
+      if user_signed_in?
+        = link_to "新規会員登録", new_user_registration_path, class: "account-new-btn" 
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'account-new-btn'
+      - else
+        = link_to "新規会員登録", new_user_registration_path, class: "account-new-btn"
+        = link_to "ログイン", new_user_session_path, class: "account-new-btn"
+  .header__down
+    .header__down__community
+      = link_to "コミュニティ", "#", class: "header-tab"
+    .header__down__scout
+      = link_to "スカウト", "#", class: "header-tab"
+    .header__down__join
+      = link_to "ジョイン", "#", class: "header-tab"
