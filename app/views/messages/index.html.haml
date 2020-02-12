@@ -1,2 +1,56 @@
-%h1 Messages#index
-%p Find me in app/views/messages/index.html.haml
+= render "shared/header"
+
+.main-content
+  .main-content__top
+    .main-content__top__title
+      %h2 気軽に起業家と繋がれる
+      %h3 マッチングサイト
+    .main-content__top__image
+      = image_tag('top-image.jpg', class: 'top-image')
+    .main-content__top__button
+      %button.account-new-btn
+        = link_to "会員登録(無料)", "#", class: "account-new-btn"
+
+  .main-content__how-to-use
+    %h2 本サイトの使い方
+    .main-content__how-to-use__flow
+      .main-content__how-to-use__flow__step
+        .main-content__how-to-use__flow__step__tab
+          %h3 ステップ1
+          %h4 自分をアピールしよう
+        .main-content__how-to-use__flow__step__text
+          %p 本サイトは、すでに起業している方々やこれから起業したい方々を繋ぐプラットフォームになります。あなた自身の特技（動画編集、プログラミング、絵描き、マーケティング...)や繋がりたい方の特徴（スタートアップのメンバー募集をしている方、動画編集マンを探している方、自社サービスを利用してくれそうな方...）の詳細を書いて、あなたと繋がりたいと思って頂きましょう！！
+      .main-content__how-to-use__flow__step
+        .main-content__how-to-use__flow__step__tab
+          %h3 ステップ2
+          %h4 DMを送ろう
+        .main-content__how-to-use__flow__step__text
+          %p 気になる相手がいたら、実際にDMを送り、DMを送った理由やどんなことを一緒にやりたいのか等の詳細について会話しましょう！
+      .main-content__how-to-use__flow__step
+        .main-content__how-to-use__flow__step__tab
+          %h3 ステップ3
+          %h4 マッチング
+        .main-content__how-to-use__flow__step__text
+          %p DM内で双方の合意が取れたら、マッチング成立になります。双方にとってビジネスが飛躍するように力を合わせていきましょう！
+
+  .main-content__news
+    %h2 ニュース情報
+    .main-content__news__big
+      = render "shared/news"
+      = render "shared/news"
+      = render "shared/news"
+
+  .main-content__community
+    %h2 コミュニティ
+    .main-content__community__big
+      = render "shared/community"
+
+  .main-content__scout
+    %h2 スカウト
+    .main-content__scout__big
+      = render "shared/scout"
+      
+  .main-content__join
+    %h2 ジョイン
+    .main-content__join__big
+    = render "shared/join"

@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+.header{
+  width: 100%;
+  &__up{
+    background-color: #262626;
+    padding: 0 20px;
+    ul{
+      display: flex;
+      .logo{
+        line-height: 50px;
+      }
+      h2{
+        font-size: 24px;
+        font-weight: bold;
+        color: gold;
+        margin-right: 30px;
+      }
+      p{
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+      }
+      .icon{
+        margin: 0 0 0 auto;
+        .header-icon{
+          color: gold;
+          font-size: 40px;
+          line-height: 50px;
+        }
+      }
+    }
+  }
+  &__down{
+    background-color: gold;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    padding: 9px;
+    &__tab{
+      margin-right: 20px;
+      display: inline-block;
+      text-decoration: none;
+      color: black;
+      width: 150px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 5px;
+      background: white;
+      text-align: center;
+      overflow: hidden;
+      font-weight: bold;
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.28);
+      }
+      .header-tab{
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      :active{
+         /*ボタンを押したとき*/
+         -webkit-transform: translateY(4px);
+         transform: translateY(4px);
+         box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+         border-bottom: none;
+      }
+    }
+  }
