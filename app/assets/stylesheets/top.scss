@@ -154,6 +154,7 @@
             border-radius: 5px;
             padding: 4px;
             width: 100px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.28);
             .news-btn{
               text-decoration: none;
               color: black;
@@ -163,7 +164,7 @@
       }
   }
   &__community{
-    margin-top: 30px;
+    margin-top: 70px;
     height: 100%;
     h2{
       color: #262626;
@@ -176,7 +177,7 @@
       }
       &__range{
         padding: 10px;
-        margin-right: 40px;
+        margin-right: 20px;
         &__image{
           .community-image{
             border-radius: 10px;
@@ -217,6 +218,7 @@
             border-radius: 5px;
             padding: 4px;
             width: 100px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.28);
             .community-btn{
               text-decoration: none;
               color: black;
@@ -224,5 +226,86 @@
         }
       }
     }
+  }
+  &__scout{
+    margin-top: 70px;
+    height: 100%;
+    h2{
+      color: #262626;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: underline;
+      }
+      &__big{
+        display: flex;
+        align-content: space-between;
+        flex-wrap: wrap;
+      }
+      &__range{
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        width: 208px;
+        position: relative;
+        &__icon{
+          .icon-image{
+            height: 70px;
+            width: 70px;
+            border-radius: 300px;
+          }
+        }
+        &__name{
+          position: absolute;
+          top: 17px;
+          left: 84px;
+          p{
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+        &__work{
+          background-color: brown;
+          padding: 4px;
+          border-radius: 5px;
+          position: absolute;
+          top: 45px;
+          left: 82px;
+          h3{
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+          }
+        }
+        &__introduce{
+          padding: 10px 0;
+          h4{
+            font-size: 12px;
+            color: gray;
+          }
+        }
+        &__button{
+          text-align: center;
+          .follow-btn{
+            background-color: gold;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.28);
+            border-radius: 3px;
+            }
+          }
+        }
+      }
+  &__join{
+    margin-top: 70px;
+    height: 100%;
+    h2{
+      color: #262626;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: underline;
+      }
+      &__big{
+        display: flex;
+        align-content: space-between;
+        flex-wrap: wrap;
+      } 
   }
 }
