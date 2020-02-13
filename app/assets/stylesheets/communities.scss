@@ -1,3 +1,72 @@
-// Place all the styles related to the communities controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.community{
+  padding: 40px 150px;
+  &__create{
+    height: 130px;
+    p{
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 10px;
+    }
+    button{
+      background-color: gold;
+      border-radius: 5px;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.28);
+      .community-btn{
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+        line-height: 30px;
+        font-weight: bold;
+      }
+    }
+  }
+  &__index{
+    h1{
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 10px;
+    }
+    &__big{
+      display: flex;
+      align-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+  &__new-create{
+    text-align: center;
+    h2{
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .community-form__input{
+      width: 500px;
+      height: 50px;
+      padding: 8px;
+      margin-bottom: 20px;
+    }
+    .community-form__image{
+      width: 500px;
+      height: 50px;
+      padding: 8px;
+      margin-bottom: 20px;
+    }
+    .community-form__input-box{
+      width: 500px;
+      height: 100px;
+      margin-bottom: 20px;
+      padding: 8px;
+    }
+    .community-form__action-btn{
+      background-color: gold;
+      border-radius: 5px;
+      padding: 4px;
+      font-weight: bold;
+      width: 80px;
+      position: absolute;
+      top: 520px;
+      left: 672px;
+    }
+  }
+}
