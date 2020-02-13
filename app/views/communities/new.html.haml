@@ -6,7 +6,7 @@
       %h2 コミュニティ名
       = f.text_field :name, class: "community-form__input", placeholder: "例） 東京の起業家同士で飲み会しませんか！？"
       %h2 コミュニティ概要
-      = f.text_field :explain, class: "community-form__input-box", placeholder: "例） 東京の起業家同士でお酒を交わしながら、意見交流したい方募集しています。"
+      = f.text_area :explain, class: "community-form__input-box", placeholder: "例） 東京の起業家同士でお酒を交わしながら、意見交流したい方募集しています。"
       %h2 コミュニティイメージ
       = f.file_field :image, class: "community-form__image"
       = f.submit "保存", class: "community-form__action-btn"

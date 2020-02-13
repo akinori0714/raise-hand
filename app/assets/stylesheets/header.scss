@@ -10,16 +10,18 @@
     display: flex;
     &__logo{
       line-height: 50px;
-      h2{
+      .header-logo-btn{
         font-size: 24px;
         font-weight: bold;
         color: gold;
         margin-right: 30px;
+        text-decoration: none;
       }
       p{
         font-size: 14px;
         font-weight: bold;
         color: white;
+        line-height: 53px;
       }
     }
     &__icon{

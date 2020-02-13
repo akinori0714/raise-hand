@@ -6,10 +6,12 @@
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
+    .account-page__header{
+      text-align: center;
+    }
 
     .account-page__inner--left, .account-page__inner--right {
-      float: left;
-      width: 50%;
+      margin: 0 100px;
     }
     &:after {
       clear: both;
@@ -19,25 +21,10 @@
   }
 
   .account-page__header {
-    h2 {
-      margin-bottom: 10px;
-      letter-spacing: 3px;
-      font-size: 40px;
-      font-weight: 200;
-
-      &:after {
-        content: '';
-        display: block;
-        width: 60px;
-        margin-top: 5px;
-        border-bottom: 1px solid #38aef0;
-      }
-    }
-
     h5 {
       margin-bottom: 20px;
-      font-size: 14px;
-      font-weight: 200;
+      font-size: 30px;
+      font-weight: bold;
     }
 
     .btn {
@@ -50,12 +37,17 @@
 
   .field {
     margin-bottom: 10px;
-
+    display: flex;
     .field-label {
       padding: 10px 0;
       letter-spacing: 1px;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 200;
+      width: 100%;
+
+      select{
+        width: 300px;
+      }
 
       i {
         font-size: 11px;
@@ -64,11 +56,31 @@
 
     .field-input {
       input {
-        width: 100%;
+        width: 400px;
         padding: 10px;
         letter-spacing: 1px;
       }
     }
+    .field-select {
+      select {
+        height: 30px;
+        width: 200px;
+        padding: 10px;
+        letter-spacing: 1px;
+      }
+    }
+    .field-text-area {
+      textarea {
+        height: 200px;
+        width: 400px;
+        padding: 10px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .actions{
+    text-align: center;
   }
 
   .btn {
@@ -83,10 +95,10 @@
   }
 
   input[type='submit'] {
-    float: left;
     margin-top: 20px;
-    color: #fff;
-    background-color: #38aef0;
+    font-weight: bold;
+    color: black;
+    background-color: gold;
   }
 
   .field-label {

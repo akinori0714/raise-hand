@@ -1,32 +1,87 @@
+= render "shared/header"
+
 #account-page.account-page
   .account-page__inner.clearfix
     .account-page__inner--left.account-page__header
-      %h2 Create Account
-      %h5 新規アカウントの作成
-      = render "devise/shared/links"
+      %h5 新規会員登録
     .account-page__inner--right.user-form
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
         .field
           .field-label
-            = f.label :name
+            = f.label :名前
           .field-input
-            = f.text_field :name, autofocus: true
+            = f.text_field :name, autofocus: true, placeholder: "例） 山田太郎"
         .field
           .field-label
-            = f.label :email
+            = f.label :アイコン
+          .field-input
+            = f.file_field :image, autofocus: true
+        .field
+          .field-label
+            = f.label :性別
+          .field-select
+            = f.select :sex, ["男性", "女性"], prompt: "---"
+        .field
+          .field-label
+            = f.label :年齢
+          .field-select
+            = f.select :age, ["10代", "20歳~24歳", "25歳~29歳", "30歳~34歳", "35歳~39歳", "40歳~44歳", "45歳~49歳", "50歳~54歳", "55歳~59歳", "60歳〜"], prompt: "---"
+        .field
+          .field-label
+            = f.label :地域
+          .field-select
+            = f.select :area, ["北海道", "青森", "岩手", "宮城", "秋田", "山形", "福島", "茨城", "栃木", "群馬", "埼玉", "東京", "神奈川", "千葉", "新潟", "富山", "石川", "福井", "山梨", "長野", "愛知", "岐阜", "三重", "滋賀", "京都", "大阪", "兵庫", "奈良", "和歌山", "鳥取", "島根", "岡山", "広島", "山口", "徳島", "香川", "愛媛", "高知", "福岡", "佐賀", "長崎", "熊本", "大分", "宮崎", "鹿児島", "沖縄"], prompt: "---"
+        .field
+          .field-label
+            = f.label :職種
+          .field-select
+            = f.select :work, ["学生","営業", "事務・管理", "企画・マーケティング", "経営・管理職", "サービス", "Web・インターネット・ゲーム", "クリエイティブ（メディア・アパレル・デザイン）", "専門職（コンサルタント・士業・金融・不動産）", "ITエンジニア（システム開発・SE・インフラ）", "エンジニア（機械・電気・電子・半導体・制御）", "素材・化学・食品・医薬品技術職", "建築・土木技術職", "技能工・設備・交通・運輸", "医療・福祉・介護", "教育・保育・公務員・農林水産・その他"] , prompt: "---"
+        .field
+          .field-label
+            = f.label :業界
+          .field-select
+            = f.select :industry, ["学生","金融", "IT・メディア", "自動車・機械", "小売・卸", "サービス", "建設・不動産", "エネルギー・資源", "電気・精密", "生活関連", "飲食", "物流・運送", "食品", "衣料・装飾", "娯楽・レジャー"], prompt: "---"
+        .field
+          .field-label
+            = f.label :スキル
+          .field-input
+            = f.text_field :skill, autofocus: true
+        .field
+          .field-label
+            = f.label :自己紹介文
+          .field-text-area
+            = f.text_area :introduce, autofocus: true, placeholder: "例）初めまして。山田太郎と言います。エンジニア歴10年で、現在会社員をしています。近い内に脱サラしようと考えています。フリーランスで案件を獲得しつつ、スタートアップ案件にも挑戦したいと考えていますので、エンジニア不足の起業家様にはお力添えできるかと思います。"
+        .field
+          .field-label
+            = f.label :興味あるプロジェクト
+          .field-input
+            = f.text_field :project
+        .field
+          .field-label
+            = f.label :やってみたいこと
+          .field-input
+            = f.text_field :want_to_do
+        .field
+          .field-label
+            = f.label :繋がりたい人
+          .field-input
+            = f.text_field :want_to_meet
+        .field
+          .field-label
+            = f.label :メール
           .field-input
             = f.email_field :email
         .field
           .field-label
-            = f.label :password
+            = f.label :パスワード
             %i (英数字8文字以上)
           .field-input
             = f.password_field :password, autocomplete: "off"
         .field
           .field-label
-            = f.label :password_confirmation
+            = f.label :パスワード（確認用）
           .field-input
             = f.password_field :password_confirmation, autocomplete: "off"
         .actions
-          = f.submit "Create Account", class: 'btn'
+          = f.submit "登録", class: 'btn'
