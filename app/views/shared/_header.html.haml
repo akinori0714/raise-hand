@@ -1,12 +1,18 @@
 .header
   .header__up
-    %ul
-      %li.logo
-        %h2 Shake × Hands
-      %li.logo
-        %p 起業家同士が気軽に繋がるためのマッチングプラットフォーム
-      %li.icon
-        = icon('fa', 'user', class: "header-icon")
+    .header__up__logo
+      %h2 Shake × Hands
+    .header__up__logo
+      %p 起業家同士が気軽に繋がるためのマッチングプラットフォーム
+    .header__up__icon
+      %ul.menu
+        %li 
+        - if user_signed_in?
+          = link_to "新規会員登録(無料)", new_user_registration_path, class: "account-new-btn" 
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'account-new-btn'
+        - else
+          = link_to "新規会員登録(無料)", new_user_registration_path, class: "account-new-btn"
+          = link_to "ログイン", new_user_session_path, class: "account-new-btn"
   .header__down
     .header__down__tab
       = link_to "コミュニティ", "#", class: "header-tab"

@@ -7,11 +7,9 @@
   &__up{
     background-color: #262626;
     padding: 0 20px;
-    ul{
-      display: flex;
-      .logo{
-        line-height: 50px;
-      }
+    display: flex;
+    &__logo{
+      line-height: 50px;
       h2{
         font-size: 24px;
         font-weight: bold;
@@ -23,16 +21,20 @@
         font-weight: bold;
         color: white;
       }
-      .icon{
-        margin: 0 0 0 auto;
-        .header-icon{
-          color: gold;
-          font-size: 40px;
-          line-height: 50px;
+    }
+    &__icon{
+      margin: 0 0 0 auto;
+      background-color: #262626;
+      border: none;
+      .account-new-btn{
+        color: white;
+        font-size: 14px;
+        line-height: 50px;
+        text-decoration: none;
+        font-weight: bold;
         }
       }
     }
-  }
   &__down{
     background-color: gold;
     height: 50px;
