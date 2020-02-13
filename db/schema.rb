@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200210065148) do
+ActiveRecord::Schema.define(version: 20200213131717) do
+
+  create_table "communities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                    null: false
+    t.string   "explain",                 null: false
+    t.string   "image",      default: ""
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["name"], name: "index_communities_on_name", unique: true, using: :btree
+  end
+
+  create_table "communities_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "communities_id"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["communities_id"], name: "index_communities_users_on_communities_id", using: :btree
+    t.index ["user_id"], name: "index_communities_users_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                null: false
@@ -26,4 +44,6 @@ ActiveRecord::Schema.define(version: 20200210065148) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "communities_users", "communities", column: "communities_id"
+  add_foreign_key "communities_users", "users"
 end
