@@ -4,7 +4,6 @@ class CommunitiesController < ApplicationController
     @communities = Community.all
   end
 
-
   def new
     @community = Community.new
   end
@@ -19,6 +18,7 @@ class CommunitiesController < ApplicationController
   end
 
   def show
+    @community = Community.find(params[:id])
   end
 
   private
