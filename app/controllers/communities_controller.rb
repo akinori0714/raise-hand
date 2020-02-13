@@ -1,7 +1,7 @@
 class CommunitiesController < ApplicationController
 
   def index
-    @community = Community.all
+    @communities = Community.all
   end
 
 
@@ -23,7 +23,7 @@ class CommunitiesController < ApplicationController
 
   private
   def community_params
-    params.require(:community).permit(:name, :image, :explain, heuser_ids: [])
+    params.require(:community).permit(:name, :image, :explain, user_ids: [])
   end
   
 end
