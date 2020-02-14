@@ -2,17 +2,17 @@
   .scout__index__big__block__image
     = attachment_image_tag user, :image, class: "user-image"
   .scout__index__big__block__name
-    %h2 名前
     = user.name
+  .scout__index__big__block__work
+    = user.work
   .scout__index__big__block__sex
     %h2 性別
     = user.sex
   .scout__index__big__block__age
     %h2 年齢
     = user.age
-  .scout__index__big__block__work
-    %h2 職種
-    = user.work
   .scout__index__big__block__introduce
     %h2 自己紹介
     = user.introduce
+  .scout__index__big__block__button
+    %button{type: "submit", class: "follow-btn"} + フォロー
