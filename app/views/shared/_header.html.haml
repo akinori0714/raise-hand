@@ -15,8 +15,10 @@
           = link_to "ログイン", new_user_session_path, class: "account-new-btn"
   .header__down
     .header__down__tab
+      = link_to "マイページ", "#", class: "header-tab"
+    .header__down__tab
       = link_to "コミュニティ", communities_path , class: "header-tab"
     .header__down__tab
-      = link_to "スカウト", "#", class: "header-tab"
+      = link_to "スカウト", scouts_path, class: "header-tab"
     .header__down__tab
       = link_to "ジョイン", "#", class: "header-tab"

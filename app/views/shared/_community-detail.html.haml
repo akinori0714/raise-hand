@@ -1,7 +1,13 @@
-.imagebody__flame__itemslists__block
-  .imagebody__flame__itemslists__block__image
-    = image_tag community.image, class: "top-image"
-    .top-price
-      = community.name
-    .top-name
+.community__index__big__block
+  .community__index__big__block__image
+    = attachment_image_tag community, :image, class: "community-image"
+  .community__index__big__block__name
+    %h2 コミュニティ名
+    = community.name
+  .community__index__big__block__explain
+    %h2 コミュニティ説明
+    .community__index__big__block__explain__text
       = community.explain
+  .community__index__big__block__button
+    %button.news-btn
+      = link_to "詳細", "#", class: "community-btn"

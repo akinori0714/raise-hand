@@ -3,7 +3,7 @@ class CreateCommunities < ActiveRecord::Migration[5.0]
     create_table :communities do |t|
       t.string :name,    null: false
       t.string :explain, null: false
-      t.string :image,   default: ""
+      t.string :image_id,   default: ""
       t.index :name,     unique: true
       t.timestamps
     end

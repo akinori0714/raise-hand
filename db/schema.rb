@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20200213131717) do
   create_table "communities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                    null: false
     t.string   "explain",                 null: false
-    t.string   "image",      default: ""
+    t.string   "image_id",   default: ""
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.index ["name"], name: "index_communities_on_name", unique: true, using: :btree
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20200213131717) do
     t.string   "want_to_do",                          null: false
     t.string   "want_to_meet",                        null: false
     t.string   "join_type",                           null: false
-    t.string   "image",                  default: ""
+    t.string   "image_id",               default: ""
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

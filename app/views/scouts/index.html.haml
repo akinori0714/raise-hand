@@ -1,0 +1,8 @@
+= render "shared/header"
+
+.scout-page
+  .scout
+    .scout__index
+      %h1  ユーザー一覧
+      .scout__index__big
+        = render partial: "shared/user-detail", collection: @users, as: :user

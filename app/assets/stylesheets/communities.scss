@@ -26,12 +26,73 @@
       font-size: 24px;
       font-weight: bold;
       text-decoration: underline;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
     }
     &__big{
       display: flex;
       align-content: space-between;
       flex-wrap: wrap;
+      &__block{
+        width: 350px;
+        margin-right: 30px;
+        background-color: white;
+        border-radius: 5px;
+        &__image{
+          margin-bottom: 10px;
+          .community-image{
+            height: 200px;
+            padding: 0px;
+            width: 349px;
+            border-radius: 5px;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.28);
+          }
+        }
+        &__name{
+          font-size: 20px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          padding: 0 10px;
+          h2{
+            font-size: 14px;
+            font-weight: bold;
+            color: gray;
+          }
+        }
+        &__explain{
+          margin-bottom: 10px;
+          padding: 0 10px;
+          h2{
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: gray;
+          }
+          &__text{
+            font-size: 14px;
+            border: solid 1px gray;
+            padding: 10px;
+            border-radius: 5px;
+            height: 100px;
+          }
+        }
+        &__button{
+          text-align: center;
+          margin-bottom: 10px;
+          button{
+            background-color: gold;
+            border-radius: 5px;
+            padding: 5px;
+            width: 100px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.28);
+            .community-btn{
+              color: black;
+              text-decoration: none;
+              font-size: 16px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
     }
   }
   &__new-create{
