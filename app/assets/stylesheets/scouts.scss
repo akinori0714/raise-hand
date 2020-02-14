@@ -1,0 +1,26 @@
+.scout{
+  padding: 40px 150px;
+  &__index{
+    h1{
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: underline;
+      margin-bottom: 10px;
+    }
+    .scout__index__big{
+      display: flex;
+      align-content: space-between;
+      flex-wrap: wrap;
+      &__block{
+        margin-right: 20px;
+        &__image{
+          .user-image{
+            height: 70px;
+            width: 70px;
+            border-radius: 300px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   has_many :communities_users
   has_many :groups, through: :group_users
+
+  attachment :image
 end

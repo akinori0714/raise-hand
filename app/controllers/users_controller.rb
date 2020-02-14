@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+  def create
+    @user = User.new(user_params)
+    @user.image = "default.png"
+  end
+
   def edit
   end
 
@@ -14,7 +19,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :image)
   end
 
 end

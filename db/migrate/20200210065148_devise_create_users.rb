@@ -17,7 +17,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :want_to_do,         null: false
       t.string :want_to_meet,       null: false
       t.string :join_type,          null: false
-      t.string :image,                           default: ""
+      t.string :image_id,                        default: ""
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
