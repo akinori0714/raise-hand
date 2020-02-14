@@ -29,6 +29,11 @@
             = f.select :age, ["10代", "20歳~24歳", "25歳~29歳", "30歳~34歳", "35歳~39歳", "40歳~44歳", "45歳~49歳", "50歳~54歳", "55歳~59歳", "60歳〜"], prompt: "---"
         .field
           .field-label
+            = f.label :自己紹介文
+          .field-text-area
+            = f.text_area :introduce, autofocus: true, placeholder: "例）初めまして。山田太郎と言います。エンジニア歴10年で、現在会社員をしています。近い内に脱サラしようと考えています。フリーランスで案件を獲得しつつ、スタートアップ案件にも挑戦したいと考えていますので、エンジニア不足の起業家様にはお力添えできるかと思います。"
+        .field
+          .field-label
             = f.label :地域
           .field-select
             = f.select :area, ["北海道", "青森", "岩手", "宮城", "秋田", "山形", "福島", "茨城", "栃木", "群馬", "埼玉", "東京", "神奈川", "千葉", "新潟", "富山", "石川", "福井", "山梨", "長野", "愛知", "岐阜", "三重", "滋賀", "京都", "大阪", "兵庫", "奈良", "和歌山", "鳥取", "島根", "岡山", "広島", "山口", "徳島", "香川", "愛媛", "高知", "福岡", "佐賀", "長崎", "熊本", "大分", "宮崎", "鹿児島", "沖縄"], prompt: "---"
@@ -49,14 +54,32 @@
             = f.text_field :skill, autofocus: true
         .field
           .field-label
-            = f.label :自己紹介文
-          .field-text-area
-            = f.text_area :introduce, autofocus: true, placeholder: "例）初めまして。山田太郎と言います。エンジニア歴10年で、現在会社員をしています。近い内に脱サラしようと考えています。フリーランスで案件を獲得しつつ、スタートアップ案件にも挑戦したいと考えていますので、エンジニア不足の起業家様にはお力添えできるかと思います。"
+            = f.label :実績
+          .field-input
+            = f.text_field :performance, autofocus: true
         .field
           .field-label
             = f.label :興味あるプロジェクト
           .field-input
             = f.text_field :project
+        .field
+          .field-label
+            = f.label :参画形態
+          .field-select
+            = f.label :フルタイム
+            = f.check_box :join_type, id: :join_type_checkbox
+            = f.label :週末のみ
+            = f.check_box :join_type, id: :join_type_checkbox
+            = f.label :無給期間あり
+            = f.check_box :join_type, id: :join_type_checkbox
+            = f.label :報酬あり
+            = f.check_box :join_type, id: :join_type_checkbox
+            = f.label :参画形態は要相談
+            = f.check_box :join_type, id: :join_type_checkbox
+            = f.label :経営陣として参画したい
+            = f.check_box :join_type, id: :join_type_checkbox
+            = f.label :従業員として参画したい
+            = f.check_box :join_type, id: :join_type_checkbox
         .field
           .field-label
             = f.label :やってみたいこと

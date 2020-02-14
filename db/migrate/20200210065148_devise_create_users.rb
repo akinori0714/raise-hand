@@ -11,10 +11,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :work,               null: false
       t.string :industry,           null: false
       t.string :skill,              null: false
+      t.string :performance,        null: false
       t.string :introduce,          null: false
       t.string :project,            null: false
       t.string :want_to_do,         null: false
       t.string :want_to_meet,       null: false
+      t.string :join_type,          null: false
       t.string :image,                           default: ""
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
