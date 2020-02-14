@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :users
   resources :communities
   resources :scouts
+  resources :mypages
 end

@@ -19,6 +19,8 @@
         width: 208px;
         position: relative;
         margin-bottom: 20px;
+        background-color: white;
+        padding: 10px;
         &__image{
           .user-image{
             height: 70px;
@@ -29,7 +31,7 @@
         }
         &__name{
           position: absolute;
-          top: 10px;
+          top: 20px;
           left: 100px;
           display: flex;
           font-size: 14px;
@@ -37,7 +39,7 @@
         }
         &__work{
           position: absolute;
-          top: 30px;
+          top: 40px;
           left: 100px;
           font-size: 12px;
           font-weight: bold;
@@ -56,8 +58,13 @@
         &__introduce{
           color: gray;
           font-size: 12px;
-          width: 250px;
-          height: 50px;
+          width: 190px;
+          height: 80px;
+          border: solid 1px gray;
+          padding: 4px;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          font-weight: bold;
           h2{
             font-size: 14px;
             color: black;

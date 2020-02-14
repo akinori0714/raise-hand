@@ -1,0 +1,86 @@
+= render "shared/header"
+
+.mypage
+  %h2 マイページ
+  .mypage__content
+    .mypage__content__background
+      = image_tag('pic4.jpg', class: 'mypage-background')
+    .mypage__content__icon
+      = attachment_image_tag current_user, :image, class: "user-image"
+    .mypage__content__name
+      = current_user.name
+    .mypage__content__work
+      = current_user.work
+
+    .mypage__content__tab
+      .mypage__content__tab__sex
+        %p 性別
+        .mypage__content__tab__sex__figure
+          = current_user.sex
+      .mypage__content__tab__sex
+        %p 年齢
+        .mypage__content__tab__sex__figure
+          = current_user.age
+      .mypage__content__tab__sex
+        %p 地域
+        .mypage__content__tab__sex__figure
+          = current_user.area
+
+    .mypage__content__button
+      .mypage__content__button__block
+        %button{type: "submit", class: "mypage-block"} ブロック
+      .mypage__content__button__follow
+        %button{type: "submit", class: "follow-btn"} + フォロー
+      .mypage__content__button__dm
+        %button
+          = icon('fas', 'envelope', class: "dm-btn")
+
+    .mypage__content__tab2
+      .mypage__content__tab2__follow
+        %p フォロー
+        %h5 200人
+      .mypage__content__tab2__follow
+        %p フォロワー
+        %h5 2000人
+    .mypage__content__introduce
+      %p 自己紹介
+      .mypage__content__introduce__text
+        = current_user.introduce
+    
+    .mypage__content__tab3
+      %h5 各種情報
+      %table{border: "1"}
+        %thead
+          %tr
+            %th 項目
+            %th 内容
+        %tbody
+          %tr
+            %td 業界
+            %td
+              = current_user.industry
+        %tbody
+          %tr
+            %td スキル
+            %td
+              = current_user.skill
+        %tbody
+          %tr
+            %td 実績
+            %td
+              = current_user.performance
+        %tbody
+          %tr
+            %td やりたいこと
+            %td
+              = current_user.want_to_do
+        %tbody
+          %tr
+            %td 繋がりたい人
+            %td
+              = current_user.want_to_meet
+        %tbody
+          %tr
+            %td 参加形態
+            %td
+              = current_user.join_type
