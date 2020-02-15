@@ -1,17 +1,18 @@
-.scout__index__big__block
-  .scout__index__big__block__image
-    = attachment_image_tag user, :image, class: "user-image"
-  .scout__index__big__block__name
-    = user.name
-  .scout__index__big__block__work
-    = user.work
-  .scout__index__big__block__sex
-    %h2 性別
-    = user.sex
-  .scout__index__big__block__sex
-    %h2 年齢
-    = user.age
-  .scout__index__big__block__introduce
-    = user.introduce
-  .scout__index__big__block__button
-    %button{type: "submit", class: "follow-btn"} + フォロー
+= link_to(user_path(user.id)) do
+  .scout__index__big__block
+    .scout__index__big__block__image
+      = attachment_image_tag user, :image, class: "user-image"
+    .scout__index__big__block__name
+      = user.name
+    .scout__index__big__block__work
+      = user.work
+    .scout__index__big__block__sex
+      %h2 性別
+      = user.sex
+    .scout__index__big__block__sex
+      %h2 年齢
+      = user.age
+    .scout__index__big__block__introduce
+      = user.introduce
+    .scout__index__big__block__button
+      %button{type: "submit", class: "follow-btn"} + フォロー
