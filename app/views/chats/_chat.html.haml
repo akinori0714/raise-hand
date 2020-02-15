@@ -1,0 +1,15 @@
+= link_to(user_path(chat.user.id)) do
+  .chat
+    .chat__upper
+      .chat__upper__user-icon
+        = attachment_image_tag chat.user, :image, class: "chat-user-image"
+      .chat__upper__user-name
+        = chat.user.name
+      .chat__upper__date
+        = chat.created_at.strftime("%Y年%m月%d日 %H時%M分")
+        
+    .chat__lower
+      - if chat.content.present?
+        %p.chat__lower__content
+          = chat.content
+      = image_tag chat.image.url, class: 'lower-chat__image' if chat.image.present?

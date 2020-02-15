@@ -20,7 +20,13 @@ class CommunitiesController < ApplicationController
   def show
     @community = Community.find(params[:id])
     @chat = Chat.new
+    @chats = Chat.all
   end
+
+  # def add_user_to_community
+  #   @user = User.find(id: current_user.id)
+  #   @community = Community.new
+  # end
 
   private
   def community_params

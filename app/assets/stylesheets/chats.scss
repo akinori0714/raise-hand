@@ -1,3 +1,35 @@
-// Place all the styles related to the chats controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.chat{
+  background-color: white;
+  margin-right: 40px;
+  padding: 20px;
+  border-bottom: solid 1px gold;
+  &__upper{
+    position: relative;
+    &__user-icon{
+      .chat-user-image{
+        width: 70px;
+        height: 70px;
+        border-radius: 300px;
+      }
+    }
+    &__user-name{
+      color: black;
+      position: absolute;
+      top: 10px;
+      left: 80px;
+      font-weight: bold;
+    }
+    &__date{
+      position: absolute;
+      top: 35px;
+      left: 80px;
+      color: gray;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+  &__lower{
+    color: black;
+    margin-left: 80px;
+  }
+}
