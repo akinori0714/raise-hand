@@ -1,0 +1,43 @@
+.community-detail{
+  padding: 40px 300px;
+  &__up{
+    background-color: white;
+    width: 800px;
+    &__image{
+      .community-detail-image{
+        height: 450px;
+        width: 800px;
+        border-radius: 5px;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.28);
+      }
+    }
+    &__name{
+      padding: 20px;
+      p{
+        font-size: 16px;
+        color: gray;
+        font-weight: bold;
+      }
+      &__tab{
+        font-weight: bold;
+        font-size: 24px;
+      }
+    }
+    &__explain{
+      padding: 20px;
+      p{
+        font-size: 16px;
+        color: gray;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      &__tab{
+        padding: 10px;
+        font-size: 16px;
+        border: solid 1px gray;
+        height: 200px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
