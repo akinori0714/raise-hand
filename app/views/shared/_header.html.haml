@@ -7,8 +7,7 @@
     .header__up__icon
       %ul.menu
         %li 
-        - if user_signed_in?
-          = link_to "新規会員登録(無料)", new_user_registration_path, class: "account-new-btn" 
+        - if user_signed_in? 
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'account-new-btn'
         - else
           = link_to "新規会員登録(無料)", new_user_registration_path, class: "account-new-btn"
@@ -21,4 +20,4 @@
     .header__down__tab
       = link_to "スカウト", scouts_path, class: "header-tab"
     .header__down__tab
-      = link_to "ジョイン", "#", class: "header-tab"
+      = link_to "ジョイン", projects_path, class: "header-tab"

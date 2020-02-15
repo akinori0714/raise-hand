@@ -1,0 +1,13 @@
+.community__index__big__block
+  .community__index__big__block__image
+    = attachment_image_tag project, :image, class: "community-image"
+  .community__index__big__block__name
+    %h2 コミュニティ名
+    = project.name
+  .community__index__big__block__explain
+    %h2 コミュニティ説明
+    .community__index__big__block__explain__text
+      = project.explain
+  .community__index__big__block__button
+    %button.news-btn
+      = link_to "詳細", "#", class: "community-btn"

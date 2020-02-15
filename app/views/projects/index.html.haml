@@ -1,0 +1,11 @@
+= render "shared/header"
+
+.community
+  .community__create
+    %p  プロジェクトチームを作る
+    %button.community-create-btn
+      = link_to "+ プロジェクトチームを作る", new_project_path, class: "community-btn"
+  .community__index
+    %h1  プロジェクト一覧
+    .community__index__big
+      = render partial: "shared/project-detail", collection: @projects, as: :project

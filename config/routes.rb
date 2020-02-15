@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :communities
   resources :scouts
   resources :mypages
+  resources :projects
 end
