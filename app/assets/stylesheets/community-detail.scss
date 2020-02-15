@@ -40,4 +40,51 @@
       }
     }
   }
+
+  .form {
+    border-top: solid 3px gold;
+    border-bottom: solid 3px gold;
+    background-color: white;
+    width: 800px;
+    height: 100px;
+    padding: 20px;
+    position: relative;
+      &__message {
+        padding-left: 10px;
+        float: left;
+        height: 50px;
+        width: 630px;
+      }
+      &__mask {
+        line-height: 50px;
+        background-color: white;
+          float: left;
+          height: 50px;
+          padding-right: 10px;
+        }
+        &__image {
+          font-size: 20px;
+          line-height: 50px;
+        }
+      .icon{
+        font-size: 30px;
+        position: absolute;
+        top: 30px;
+        right: 160px;
+      }
+      .hidden {
+        display: none;
+      }
+    }
+    .form__submit {
+      background-color: gold;
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.28);
+      border-radius: 5px;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      padding: 0 30px;
+      margin-left: 10px;
+      font-weight: bold;
+    }
 }

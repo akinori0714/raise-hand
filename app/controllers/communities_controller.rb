@@ -19,6 +19,7 @@ class CommunitiesController < ApplicationController
 
   def show
     @community = Community.find(params[:id])
+    @chat = Chat.new
   end
 
   private

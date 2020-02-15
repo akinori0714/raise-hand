@@ -1,6 +1,9 @@
 class Community < ApplicationRecord
-  has_many :communities_users
-  has_many :users, through: :communities_users
+  
+  has_many :community_users
+  has_many :users, through: :community_users
+  has_many :chats
   validates :name, presence: true, uniqueness: true
-  attachment :image # ここを追加（_idは含めない）
+  attachment :image
+
 end

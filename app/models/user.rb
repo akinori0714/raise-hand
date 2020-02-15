@@ -6,7 +6,8 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   has_many :communities_users
-  has_many :groups, through: :group_users
+  has_many :communitiess, through: :communities_users
+  has_many :chats
 
   attachment :image
 end

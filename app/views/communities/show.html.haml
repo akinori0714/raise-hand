@@ -14,6 +14,14 @@
         = @community.explain
     .community-detail__up__button
 
+  .form
+    = form_for [@community, @chat] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'コメントを入力して下さい'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit '入力', class: 'form__submit'
+  
   .community-detail__down
-    .community-detail__down__chat-input
-    .community-detail__down__chat-show
+    
