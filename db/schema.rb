@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200213131717) do
+ActiveRecord::Schema.define(version: 20200214163501) do
 
   create_table "communities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                    null: false
@@ -28,6 +28,21 @@ ActiveRecord::Schema.define(version: 20200213131717) do
     t.datetime "updated_at",     null: false
     t.index ["communities_id"], name: "index_communities_users_on_communities_id", using: :btree
     t.index ["user_id"], name: "index_communities_users_on_user_id", using: :btree
+  end
+
+  create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",          null: false
+    t.string   "explain",       null: false
+    t.string   "image_id",      null: false
+    t.string   "chachcopy",     null: false
+    t.string   "url",           null: false
+    t.string   "area",          null: false
+    t.string   "recruitamount", null: false
+    t.string   "recruitperson", null: false
+    t.string   "jointype",      null: false
+    t.string   "reward",        null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

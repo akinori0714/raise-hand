@@ -1,0 +1,59 @@
+= render "shared/header"
+
+.project
+  =form_for @project do |f|
+    .project__new-create
+      .project__new-create__image
+        %p プロジェクトイメージ画像を添付して下さい
+        %h3 必須
+        = f.attachment_field :image, class: "project-image"
+
+      .project__new-create__name
+        %h3 必須
+        %h2 プロジェクト名
+        .project__new-create__name__tab
+          = f.text_field :name, class: "project-name", placeholder: "プロジェクト名を入力してください"
+      .project__new-create__name
+        %h3 必須
+        %h2 キャッチコピー
+        .project__new-create__name__tab
+          = f.text_field :chachcopy, class: "project-name", placeholder: "キャッチコピーを入力してください"  
+      .project__new-create__name
+        %h3 必須
+        %h2 概要
+        .project__new-create__name__tab
+          = f.text_area :explain, class: "project-explain", placeholder: "プロジェクト概要を入力してください"
+
+      .project__new-create__url
+        %h2 URL
+        .project__new-create__url__tab
+          = f.text_field :url, class: "url-input", placeholder: "参考になるURLがある方は添付してください"
+
+      .project__new-create__name
+        %h3 必須
+        %h2 活動地域
+        .project__new-create__name__tab
+          = f.select :area, ["北海道", "青森", "岩手", "宮城", "秋田", "山形", "福島", "茨城", "栃木", "群馬", "埼玉", "東京", "神奈川", "千葉", "新潟", "富山", "石川", "福井", "山梨", "長野", "愛知", "岐阜", "三重", "滋賀", "京都", "大阪", "兵庫", "奈良", "和歌山", "鳥取", "島根", "岡山", "広島", "山口", "徳島", "香川", "愛媛", "高知", "福岡", "佐賀", "長崎", "熊本", "大分", "宮崎", "鹿児島", "沖縄"], prompt: "---"
+      .project__new-create__name
+        %h3 必須
+        %h2 募集人数
+        .project__new-create__name__tab
+          = f.select :recruitamount, ["1人", "2人", "3人", "4人", "5人", "6人", "7人", "8人", "9人", "10人~"], prompt: "---"
+      .project__new-create__name
+        %h3 必須
+        %h2 募集人材
+        .project__new-create__name__tab
+          = f.text_field :recruitperson, class: "project-name", placeholder: "例）エネルギッシュでパワーのある方と付き合いたいです"
+      .project__new-create__name
+        %h3 必須
+        %h2 参画形態
+        .project__new-create__name__tab
+          = f.text_field :jointype, class: "project-name", placeholder: "例） 東京の起業家同士でお酒を交わしながら、意見交流したい方募集しています。"
+      
+      .project__new-create__url
+        %h2 報酬条件
+        .project__new-create__url__tab
+          = f.text_field :reward, class: "url-input", placeholder: "例） 東京の起業家同士でお酒を交わしながら、意見交流したい方募集しています。"
+      
+      .project__new-create__button
+        = f.submit "保存", class: "project-btn"
