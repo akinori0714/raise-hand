@@ -10,24 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200214163501) do
+ActiveRecord::Schema.define(version: 20200215145253) do
+
+  create_table "chats", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "content"
+    t.string   "image"
+    t.integer  "community_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["community_id"], name: "index_chats_on_community_id", using: :btree
+    t.index ["user_id"], name: "index_chats_on_user_id", using: :btree
+  end
 
   create_table "communities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                    null: false
-    t.string   "explain",                 null: false
-    t.string   "image_id",   default: ""
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "name",       null: false
+    t.string   "explain",    null: false
+    t.string   "image_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["name"], name: "index_communities_on_name", unique: true, using: :btree
   end
 
-  create_table "communities_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "communities_id"
+  create_table "community_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "community_id"
     t.integer  "user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["communities_id"], name: "index_communities_users_on_communities_id", using: :btree
-    t.index ["user_id"], name: "index_communities_users_on_user_id", using: :btree
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["community_id"], name: "index_community_users_on_community_id", using: :btree
+    t.index ["user_id"], name: "index_community_users_on_user_id", using: :btree
   end
 
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -71,6 +82,6 @@ ActiveRecord::Schema.define(version: 20200214163501) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "communities_users", "communities", column: "communities_id"
-  add_foreign_key "communities_users", "users"
+  add_foreign_key "chats", "communities"
+  add_foreign_key "chats", "users"
 end
