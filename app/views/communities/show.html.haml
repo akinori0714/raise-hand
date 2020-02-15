@@ -1,3 +1,19 @@
 = render "shared/header"
 
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+.community-detail
+  .community-detail__up
+    .community-detail__up__image
+      = attachment_image_tag @community, :image, class: "community-detail-image"
+    .community-detail__up__name
+      %p コミュニティ名
+      .community-detail__up__name__tab
+        = @community.name
+    .community-detail__up__explain
+      %p コミュニティ説明文
+      .community-detail__up__explain__tab
+        = @community.explain
+    .community-detail__up__button
+
+  .community-detail__down
+    .community-detail__down__chat-input
+    .community-detail__down__chat-show
