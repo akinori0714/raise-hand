@@ -1,0 +1,53 @@
+= render "shared/header"
+
+.project-show
+  .project-show__image
+    = attachment_image_tag @project, :image, class: "project-show-image"
+
+  .project-show__name
+    .project-show__name__tab
+      %h2 プロジェクト名
+    .project-show__name__tab2
+      = @project.name
+  .project-show__name
+    .project-show__name__tab
+      %h2 キャッチコピー
+    .project-show__name__tab2
+      = @project.chachcopy
+  .project-show__explain
+    .project-show__explain__tab
+      %h2 概要
+    .project-show__explain__tab2
+      = @project.explain
+
+  .project-show__name2
+    .project-show__name2__tab
+      %h2 URL
+    .project-show__name2__tab__tab2
+      = @project.url
+
+  .project-show__name2
+    .project-show__name2__tab
+      %h2 活動地域
+    .project-show__name2__tab2
+      = @project.area
+  .project-show__name2
+    .project-show__name2__tab
+      %h2 募集人数
+    .project-show__name2__tab2
+      = @project.recruitamount
+  .project-show__name2
+    .project-show__name2__tab
+      %h2 募集人材
+    .project-show__name2__tab2
+      = @project.recruitperson
+  .project-show__name2
+    .project-show__name2__tab
+      %h2 参画形態
+    .project-show__name2__tab2
+      = @project.jointype
+  .project-show__name2
+    .project-show__name2__tab
+      %h2 報酬条件
+    .project-show__name2__tab2
+      = @project.reward

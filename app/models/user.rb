@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :communities_users
   has_many :communitiess, through: :communities_users
   has_many :chats
+  has_many :projects
 
   attachment :image
 end
