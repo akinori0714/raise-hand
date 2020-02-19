@@ -11,7 +11,7 @@ class CommunitiesController < ApplicationController
   def create
     @community = Community.new(community_params)
     if @community.save
-      redirect_to root_path, notice: 'コミュニティを作成しました'
+      redirect_to root_path
     else
       render :new
     end
@@ -21,11 +21,6 @@ class CommunitiesController < ApplicationController
     @community = Community.find(params[:id])
     @chat = Chat.new
   end
-
-  # def add_user_to_community
-  #   @user = User.find(id: current_user.id)
-  #   @community = Community.new
-  # end
 
   private
   def community_params
