@@ -1,0 +1,9 @@
+= render "shared/header"
+
+.article__index
+  %h1  ニュース一覧
+  .article__index__create
+    - if user_signed_in? && current_user.admin?
+      = link_to "+ 記事投稿", new_article_path, class: "article-post-btn"
+  .article__index__big
+    = render partial: "shared/article-detail", collection: @articles, as: :article

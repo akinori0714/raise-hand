@@ -5,10 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
 
-  has_many :communities_users
-  has_many :communitiess, through: :communities_users
+  has_many :community_users
+  has_many :communitys, through: :community_users
   has_many :chats
   has_many :projects
+  has_many :articles
 
   attachment :image
 end

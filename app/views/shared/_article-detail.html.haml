@@ -1,0 +1,12 @@
+.article__index__big__block
+  .article__index__big__block__date
+    = article.created_at.strftime("%Y年%m月%d日")
+  .article__index__big__block__image
+    = attachment_image_tag article, :image, class: "article-image"
+  .article__index__big__block__title
+    = article.title
+  .article__index__big__block__context
+    = article.context
+  .article__index__big__block__button
+    %button.article-btn
+      = link_to "詳細", article_path(article.id), class: "article-btn"

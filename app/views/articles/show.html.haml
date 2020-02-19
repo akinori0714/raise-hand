@@ -1,0 +1,11 @@
+= render "shared/header"
+
+.article-detail
+  .article-detail__date
+    = @article.created_at.strftime("%Y年%m月%d日")
+  .article-detail__image
+    = attachment_image_tag @article, :image, class: "article-detail-image"
+  .article-detail__title
+    = @article.title
+  .article-detail__context
+    = @article.context

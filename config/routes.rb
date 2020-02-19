@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :scouts
   resources :mypages
   resources :projects
+  resources :articles
 end
