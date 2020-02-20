@@ -10,7 +10,9 @@ class ChatsController < ApplicationController
   def create
     @chat = @community.chats.new(chat_params)
     if @chat.save
-      redirect_to community_chats_path(@community), notice: 'メッセージが送信されました'
+      respond_to do |format|
+        format.json
+      end
     else
       @chats = @community.chats.includes(:user)
       render :index
