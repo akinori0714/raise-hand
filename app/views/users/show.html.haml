@@ -35,6 +35,15 @@
           = icon('fas', 'envelope', class: "dm-btn")
 
     .mypage__content__tab2
+      .mypage__content__tab2__name
+        %p フォロー
+        .mypage__content__tab2__name__count
+          = @user.followings.count
+      .mypage__content__tab2__name
+        %p フォロワー
+        .mypage__content__tab2__name__count
+          = @user.followers.count
+
     .mypage__content__introduce
       %p 自己紹介
       .mypage__content__introduce__text
