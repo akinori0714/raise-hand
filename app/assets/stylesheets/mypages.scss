@@ -72,23 +72,33 @@
       position: absolute;
       top: 462px;
       right: 10px;
-        .mypage-block{
-          background-color: #a9a9a9;
-          padding: 4px;
-          font-weight: bold;
-          border-radius: 5px;
-          margin-right: 10px;
-          font-size: 16px;
-          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.28);
-        }
-        .follow-btn{
-          background-color: gold;
-          font-weight: bold;
-          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.28);
-          border-radius: 5px;
-          padding: 4px;
-          font-size: 16px;
-          margin-right: 10px;
+      .follows{
+        background-color: gold;
+        font-weight: bold;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.28);
+        border-radius: 5px;
+        padding: 4px;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+      .follow-now{
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.28);
+        border-radius: 5px;
+        padding: 4px;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+      .mypage-block{
+        background-color: gold;
+        font-weight: bold;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.28);
+        border-radius: 5px;
+        padding: 4px;
+        font-size: 16px;
+        margin-right: 10px;
         }
       &__dm{
         border-radius: 300px;
@@ -110,21 +120,16 @@
     }
     &__tab2{
       position: absolute;
-      top: 510px;
+      top: 474px;
       left: 10px;
       display: flex;
-      color: gray;
       font-size: 14px;
       font-weight: bold;
-      &__follow{
-        margin-right: 50px;
+      &__name{
+        margin-right: 20px;
         display: flex;
         p{
-          margin-right: 10px;
-        }
-        h5{
-          color: black;
-          font-weight: bold;
+          margin-right: 20px;
         }
       }
     }
