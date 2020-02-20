@@ -7,9 +7,13 @@ Rails.application.routes.draw do
       get 'add_user_to_community'
     end
     resources :chats, only: [:index, :create]
+    namespace :api do
+      resources :chats, only: :index, defaults: { format: 'json' }
+    end
   end
   resources :scouts
   resources :mypages
   resources :projects
   resources :articles
+
 end
