@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "messages#index"
   resources :users
+  resources :relationships, only: [:create, :destroy]
   resources :communities, only: [:index, :new, :show, :create] do
     collection do
       get 'add_user_to_community'
