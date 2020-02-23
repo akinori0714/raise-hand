@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20200220092448) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.string   "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "chats", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "content"
     t.string   "image"
@@ -79,7 +86,6 @@ ActiveRecord::Schema.define(version: 20200220092448) do
     t.string   "sex",                                    null: false
     t.string   "age",                                    null: false
     t.string   "area",                                   null: false
-    t.string   "work",                                   null: false
     t.string   "industry",                               null: false
     t.string   "skill",                                  null: false
     t.string   "performance",                            null: false
@@ -91,18 +97,19 @@ ActiveRecord::Schema.define(version: 20200220092448) do
     t.string   "image_id",               default: ""
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
+    t.integer  "category_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "admin",                  default: false
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["category_id"], name: "index_users_on_category_id", using: :btree
   end
 
   add_foreign_key "chats", "communities"
   add_foreign_key "chats", "users"
   add_foreign_key "relationships", "users"
   add_foreign_key "relationships", "users", column: "follow_id"
+  add_foreign_key "users", "categories"
 end

@@ -14,11 +14,14 @@
           = link_to "ログイン", new_user_session_path, class: "account-new-btn"
   .header__down
     .header__down__tab
-      = link_to "マイページ", mypages_path, class: "header-tab"
+      - if user_signed_in?
+        = link_to "マイページ", mypages_path(@user), class: "header-tab"
+      - else
+        = link_to "マイページ", new_user_registration_path, class: "header-tab"
     .header__down__tab
       = link_to "コミュニティ", communities_path , class: "header-tab"
     .header__down__tab
-      = link_to "スカウト", scouts_path, class: "header-tab"
+      = link_to "スカウト", users_path, class: "header-tab"
     .header__down__tab
       = link_to "ジョイン", projects_path, class: "header-tab"
     .header__down__tab

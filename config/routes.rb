@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root "messages#index"
-  resources :users
+  resources :users do
+    collection do
+      get 'category'
+    end
+  end
   resources :relationships, only: [:create, :destroy]
   resources :communities, only: [:index, :new, :show, :create] do
     collection do

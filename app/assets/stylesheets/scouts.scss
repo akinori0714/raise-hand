@@ -1,5 +1,20 @@
+.parents_list{
+  padding: 60px;
+  float: left;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  .parent_category{
+    background-color: gold;
+    font-size: 14px;
+    padding: 5px;
+    border: solid 1px gray;
+  }
+}
+
+
 .scout-page{
-  padding: 40px 150px;
+  padding: 25px 150px 40px 150px;
 }
 
 .scout{
@@ -68,6 +83,8 @@
           border-radius: 5px;
           margin-bottom: 10px;
           font-weight: bold;
+          overflow: hidden;
+          text-overflow: ellipsis;
           h2{
             font-size: 14px;
             color: black;

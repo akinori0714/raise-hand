@@ -3,12 +3,12 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :users do |t|
+
       ## Database authenticatable
       t.string :name,               null: false
       t.string :sex,                null: false
       t.string :age,                null: false
       t.string :area,               null: false
-      t.string :work,               null: false
       t.string :industry,           null: false
       t.string :skill,              null: false
       t.string :performance,        null: false
@@ -20,6 +20,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :image_id,                        default: ""
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+      t.references :category, foreign_key: true
 
       ## Recoverable
       t.string   :reset_password_token
@@ -46,12 +47,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-
       t.timestamps null: false
     end
 
-    add_index :users, :email,                unique: true
-    add_index :users, :reset_password_token, unique: true
+    # add_index :users, :email,                unique: true
+    # add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
   end

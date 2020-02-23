@@ -24,7 +24,7 @@ $(function(){
   };
 
   var reloadchats = function(){
-    last_chat_id = $('.chat:last').data('chat_id');
+    var last_chat_id = $('.chat:last').data('chat_id');
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/chatsとなるよう文字列を書く
       url: "api/chats",
@@ -37,7 +37,7 @@ $(function(){
       var insertHTML = '';
       $.each(chats, function(i, chat){
         insertHTML += buildHTML(chat)
-        $('.chats').animate({ scrollTop: $('.chats')[0].scrollHeight});
+        // $('.chats').animate({ scrollTop: $('.chats')[0].scrollHeight});
       });
       $('.chats').append(insertHTML);
     })
@@ -64,6 +64,8 @@ $(function(){
       $('form')[0].reset();
       $('.form__submit').prop('disabled', false);
     })
+    .fail(function() {
+      alert("メッセージ送信に失敗しました");
   });
-
+});
 });

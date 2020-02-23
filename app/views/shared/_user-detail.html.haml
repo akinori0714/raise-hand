@@ -1,11 +1,14 @@
 = link_to(user_path(user.id)) do
   .scout__index__big__block
     .scout__index__big__block__image
-      = attachment_image_tag user, :image, class: "user-image"
+      - if user.image.nil?
+        = image_tag("default_icon.jpg", class: "user-image")
+      - else
+        = attachment_image_tag user, :image, class: "user-image"
     .scout__index__big__block__name
       = user.name
     .scout__index__big__block__work
-      = user.work
+      = user.category.name
     .scout__index__big__block__sex
       %h2 性別
       = user.sex

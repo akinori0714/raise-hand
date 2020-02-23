@@ -1,6 +1,21 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.all
+    @parents = Category.where(ancestry: nil)
+    # @children = Category.find(params[:parent_id]).children
+    # respond_to do |format|
+    #     format.html
+    #     format.json
+    #   end
+  end
+
+  def new
+    @categorys = Category.where(ancestry: nil)
+  end
+
   def create
+    @user.image = "default_icon.jpg"
   end
 
   def edit
@@ -16,6 +31,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def category
+    @category = Category.find(params[:id])
+    @categorys = @category.children
+    respond_to do |format|
+      format.json
+    end
   end
 
   private

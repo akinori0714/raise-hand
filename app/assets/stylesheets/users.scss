@@ -3,8 +3,6 @@
     width: 980px;
     margin: 60px auto;
     padding: 60px;
-    background-color: rgba(199, 198, 198, 0.822);
-    border: 1px solid #ddd;
     border-radius: 5px;
     .account-page__header{
       text-align: center;
@@ -26,7 +24,6 @@
       font-size: 30px;
       font-weight: bold;
     }
-
     .btn {
       margin-top: 20px;
       color: #fff;
@@ -44,14 +41,39 @@
       font-size: 16px;
       font-weight: 200;
       width: 100%;
-
       select{
         width: 300px;
 
       }
-
-      i {
-        font-size: 11px;
+    }
+  }
+  .field2 {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    .field2-label {
+      padding: 10px 0;
+      letter-spacing: 1px;
+      font-size: 16px;
+      width: 100%;
+    }
+    .field2-select{
+      text-align: right;
+      #large-category{
+        margin-bottom: 10px;
+        select{
+          width: 200px;
+          height: 30px;
+          letter-spacing: 1px;
+          }
+        }
+      #middle-category{
+        select{
+          width: 200px;
+          height: 30px;
+          letter-spacing: 1px;
+          }
+        }
       }
     }
 
@@ -78,7 +100,6 @@
         letter-spacing: 1px;
       }
     }
-  }
 
   .actions{
     text-align: center;
