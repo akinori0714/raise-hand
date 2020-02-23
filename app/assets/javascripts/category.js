@@ -13,7 +13,6 @@ $(document).on('turbolinks:load', function() {
   };
   // 親カテゴリー選択後のイベント
   $('#large-category').change(function(){
-    console.log(this);
     var category_id = $('#large-category option:selected').val();
     $('#middle-category').empty();
     if (category_id != "---"){ //親カテゴリーが初期値でないことを確認
@@ -24,12 +23,10 @@ $(document).on('turbolinks:load', function() {
         dataType: 'json'
       })
       .done(function(params){
-        console.log(this);
         var html = buildHTML(params);
         $('#middle-category').append(html);
       })
       .fail(function (jqXHR, textStatus, errorThrown){
-        console.log(this);
         alert('カテゴリー取得に失敗しました');       
       })
     }

@@ -11,6 +11,7 @@ class ChatsController < ApplicationController
     @chat = @community.chats.new(chat_params)
     if @chat.save
       respond_to do |format|
+        format.html { redirect_to community_chats_path(@community) }
         format.json
       end
     else

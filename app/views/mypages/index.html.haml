@@ -30,21 +30,20 @@
           = current_user.area
 
     .mypage__content__button
-      .mypage__content__button__block
-        %button{type: "submit", class: "mypage-block"} ブロック
-      .mypage__content__button__follow
-        %button{type: "submit", class: "follow-btn"} + フォロー
       .mypage__content__button__dm
         %button
           = icon('fas', 'envelope', class: "dm-btn")
 
     .mypage__content__tab2
-      .mypage__content__tab2__follow
+      .mypage__content__tab2__name
         %p フォロー
-        %h5 200人
-      .mypage__content__tab2__follow
+        .mypage__content__tab2__name__count
+          = current_user.followings.count
+      .mypage__content__tab2__name
         %p フォロワー
-        %h5 2000人
+        .mypage__content__tab2__name__count
+          = current_user.followers.count
+
     .mypage__content__introduce
       %p 自己紹介
       .mypage__content__introduce__text
@@ -57,11 +56,6 @@
           %tr
             %th 項目
             %th 内容
-        %tbody
-          %tr
-            %td 業界
-            %td
-              = current_user.industry
         %tbody
           %tr
             %td スキル

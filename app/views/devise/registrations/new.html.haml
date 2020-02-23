@@ -46,11 +46,6 @@
             #middle-category
         .field
           .field-label
-            = f.label :業界
-          .field-select
-            = f.select :industry, ["学生","金融", "IT・メディア", "自動車・機械", "小売・卸", "サービス", "建設・不動産", "エネルギー・資源", "電気・精密", "生活関連", "飲食", "物流・運送", "食品", "衣料・装飾", "娯楽・レジャー"], prompt: "---"
-        .field
-          .field-label
             = f.label :スキル
           .field-input
             = f.text_field :skill, autofocus: true
