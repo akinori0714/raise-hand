@@ -4,13 +4,16 @@
   %h2 マイページ
   .mypage__content
     .mypage__content__background
-      = image_tag('pic4.jpg', class: 'mypage-background')
+      = image_tag("default_backgroundimage.jpg", class: "user-image")
     .mypage__content__icon
-      = attachment_image_tag current_user, :image, class: "user-image"
+      - if current_user.image.nil?
+        = image_tag("default_icon.jpg")
+      - else
+        = attachment_image_tag current_user, :image, class: "user-image"
     .mypage__content__name
       = current_user.name
     .mypage__content__work
-      = current_user.work
+      = current_user.category.name
 
     .mypage__content__tab
       .mypage__content__tab__sex
@@ -27,21 +30,20 @@
           = current_user.area
 
     .mypage__content__button
-      .mypage__content__button__block
-        %button{type: "submit", class: "mypage-block"} ブロック
-      .mypage__content__button__follow
-        %button{type: "submit", class: "follow-btn"} + フォロー
       .mypage__content__button__dm
         %button
           = icon('fas', 'envelope', class: "dm-btn")
 
     .mypage__content__tab2
-      .mypage__content__tab2__follow
+      .mypage__content__tab2__name
         %p フォロー
-        %h5 200人
-      .mypage__content__tab2__follow
+        .mypage__content__tab2__name__count
+          = current_user.followings.count
+      .mypage__content__tab2__name
         %p フォロワー
-        %h5 2000人
+        .mypage__content__tab2__name__count
+          = current_user.followers.count
+
     .mypage__content__introduce
       %p 自己紹介
       .mypage__content__introduce__text
@@ -54,11 +56,6 @@
           %tr
             %th 項目
             %th 内容
-        %tbody
-          %tr
-            %td 業界
-            %td
-              = current_user.industry
         %tbody
           %tr
             %td スキル

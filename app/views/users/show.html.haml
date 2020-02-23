@@ -3,13 +3,16 @@
 .mypage
   .mypage__content
     .mypage__content__background
-      = image_tag('pic4.jpg', class: 'mypage-background')
+      = image_tag('default_backgroundimage.jpg', class: 'user-image')
     .mypage__content__icon
-      = attachment_image_tag @user, :image, class: "user-image"
+      - if @user.image.nil?
+        = image_tag("default_icon.jpg", class: "user-image")
+      - else
+        = attachment_image_tag @user, :image, class: "user-image"
     .mypage__content__name
       = @user.name
     .mypage__content__work
-      = @user.work
+      = @user.category.name
 
     .mypage__content__tab
       .mypage__content__tab__sex
@@ -56,11 +59,6 @@
           %tr
             %th 項目
             %th 内容
-        %tbody
-          %tr
-            %td 業界
-            %td
-              = @user.industry
         %tbody
           %tr
             %td スキル

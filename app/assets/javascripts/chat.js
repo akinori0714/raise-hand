@@ -24,24 +24,30 @@ $(function(){
   };
 
   var reloadchats = function(){
-    last_chat_id = $('.chat:last').data('chat_id');
+    var last_chat_id = $('.chat:last').data('chat_id');
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/chatsとなるよう文字列を書く
-      url: "api/chats",
+      url: "/api/chats",
       type: "get",
       dataType: "json",
       //dataオプションでリクエストに値を含める
       data: {id: last_chat_id}
     })
     .done(function(chats){
+      console.log(this);
       var insertHTML = '';
       $.each(chats, function(i, chat){
         insertHTML += buildHTML(chat)
-        $('.chats').animate({ scrollTop: $('.chats')[0].scrollHeight});
+        // $('.chats').animate({ scrollTop: $('.chats')[0].scrollHeight});
       });
       $('.chats').append(insertHTML);
     })
-    .fail(function(){
+    .fail(function (jqXHR, textStatus, errorThrown) {
+      console.log("失敗");
+      console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
+      console.log("textStatus     : " + textStatus);    // タイムアウト、パースエラー
+      console.log("errorThrown    : " + errorThrown.message); // 例外情報
+      console.log("URL            : " + url);
     });
   };
   setInterval(reloadchats, 7000);
@@ -55,8 +61,8 @@ $(function(){
       type: "POST",
       data: formData,
       dataType: 'json',
-      processData: false,
-      contentType: false
+      contentType: false,
+      processData: false
     })
     .done(function(data){
       var html = buildHTML(data);
@@ -64,6 +70,8 @@ $(function(){
       $('form')[0].reset();
       $('.form__submit').prop('disabled', false);
     })
+    .fail(function () {
+      alert("メッセージ送信に失敗しました");
   });
-
+});
 });
