@@ -1,13 +1,18 @@
 = render "shared/header"
 
 .user-search
-  = render 'users/search_form' 
-
-.category_list
-  #large-search
-    - @parents.each do |parent|
-      = link_to "#{parent.name}", "#", class: "search-list",id: "#{parent.id}"
-  #middle-search
+  .keyword-search
+    %p キーワード検索
+    = form_tag(users_path, method: "get") do
+      = text_field_tag :search, "", placeholder: "ユーザー名を入力"
+      %button
+        = icon('fas', 'search', class: "search-btn")
+  .cageroy-search
+    %p カテゴリ検索
+    #large-search
+      - @parents.each do |parent|
+        = link_to "#{parent.name}", "#", class: "search-list",id: "#{parent.id}"
+    #middle-search
 
 .scout-page
   .scout

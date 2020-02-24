@@ -1,14 +1,35 @@
-.category_list{
-  padding: 60px;
+.user-search{
   float: left;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
+  width: 180px;
+  margin: 63px 80px 0 40px;
+  .keyword-search{
+    position: relative;
+    margin-bottom: 20px;
+    input{
+      padding: 5px;
+      font-size: 14px;
+    }
+    button{
+      border: none;
+      position: absolute;
+      top: 35px;
+      right: 10px;
+    }
+  }
+  p{
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
   #large-search{
     background-color: gold;
     font-size: 14px;
-    padding: 5px;
-    border: solid 1px gray;
+    display: flex;
+    flex-direction: column;
+    .search-list{
+      border: solid 1px gray;
+      padding: 5px;
+    }
   }
 }
 
