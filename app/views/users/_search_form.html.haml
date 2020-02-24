@@ -1,0 +1,6 @@
+= search_form_for @q do |f|
+  = f.label :name_cont, 'ユーザー検索'
+  .input-group
+    = f.text_field :name_cont, placeholder: "キーワードを入力して下さい", class: 'form-control'
+    %span.input-group-btn
+      = f.submit '検索する', class: "keyword-search-btn"

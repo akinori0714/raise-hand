@@ -1,10 +1,10 @@
-.parents_list{
+.category_list{
   padding: 60px;
   float: left;
   width: 300px;
   display: flex;
   flex-direction: column;
-  .parent_category{
+  #large-search{
     background-color: gold;
     font-size: 14px;
     padding: 5px;
@@ -19,6 +19,7 @@
 
 .scout{
   &__index{
+    position: relative;
     h1{
       font-size: 24px;
       font-weight: bold;
@@ -29,6 +30,18 @@
       display: flex;
       align-content: space-between;
       flex-wrap: wrap;
+      .pagination{
+        position: absolute;
+        left: 155px;
+        top: 3px;
+        width: 100%;
+        ul{
+          display: flex;
+          li{
+            margin-right: 10px;
+          }
+        }
+      }
       &__block{
         text-decoration: none;
         margin-right: 20px;

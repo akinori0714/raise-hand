@@ -16,7 +16,6 @@ Rails.application.routes.draw do
       resources :chats, only: :index, defaults: { format: 'json' }
     end
   end
-  resources :scouts
   resources :mypages
   resources :projects
   resources :articles

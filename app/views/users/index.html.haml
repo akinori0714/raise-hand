@@ -1,8 +1,18 @@
 = render "shared/header"
 
+.user-search
+  = render 'users/search_form' 
+
+.category_list
+  #large-search
+    - @parents.each do |parent|
+      = link_to "#{parent.name}", "#", class: "search-list",id: "#{parent.id}"
+  #middle-search
+
 .scout-page
   .scout
     .scout__index
       %h1  ユーザー一覧
       .scout__index__big
+        = will_paginate @users, :previous_label => ' &lt 前へ', :next_label => '次へ &gt'
         = render partial: "shared/user-detail", collection: @users, as: :user

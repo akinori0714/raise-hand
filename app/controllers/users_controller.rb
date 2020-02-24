@@ -2,7 +2,16 @@ class UsersController < ApplicationController
 
   def index
     @users = User.where.not(id: current_user.id)
+    @users = User.paginate(page: params[:page], per_page: 20)
     @parents = Category.where(ancestry: nil)
+
+    if params[:q] && params[:q].reject { |key, value| value.blank? }.present?
+      @q = User.ransack(search_params, activated_true: true)
+      @title = "Search Result"
+    else
+      @q = User.ransack(activated_true: true)
+      @title = "All users"
+    end
   end
 
   def new
@@ -40,6 +49,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email)
+  end
+
+  def search_params
+    params.require(:q).permit(:name_cont)
   end
 
 end
