@@ -2,11 +2,12 @@
 
 .community
   .community__new-create
+    %p コミュニティ作成ページ
     =form_for @community do |f|
-      %h2 コミュニティ名
+      %h2 コミュニテイ名
       = f.text_field :name, class: "community-form__input", placeholder: "例） 東京の起業家同士で飲み会しませんか！？"
       %h2 コミュニティ概要
       = f.text_area :explain, class: "community-form__input-box", placeholder: "例） 東京の起業家同士でお酒を交わしながら、意見交流したい方募集しています。"
-      %h2 コミュニティイメージ
+      %h2 コミュニティ画像
       = f.attachment_field :image, class: "community-form__image"
       = f.submit "保存", class: "community-form__action-btn"

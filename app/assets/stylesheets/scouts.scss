@@ -1,7 +1,7 @@
 .user-search{
   float: left;
-  width: 180px;
-  margin: 63px 80px 0 40px;
+  width: 200px;
+  margin: 63px 20px 0 40px;
   .keyword-search{
     position: relative;
     margin-bottom: 20px;
@@ -21,14 +21,20 @@
     font-size: 14px;
     font-weight: bold;
   }
-  #large-search{
-    background-color: gold;
-    font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    .search-list{
-      border: solid 1px gray;
-      padding: 5px;
+  .cageroy-search{
+    ul.parent{
+      li{
+        border: solid 1px gray;
+        padding: 5px;
+        font-size: 14px;
+        background-color: gold;
+      }
+    }
+    ul.child{
+      li{
+        font-size: 14px;
+        background-color: white;
+      }
     }
   }
 }
@@ -54,7 +60,8 @@
       .pagination{
         position: absolute;
         left: 155px;
-        top: 3px;
+        font-size: 14px;
+        top: 4px;
         width: 100%;
         ul{
           display: flex;
