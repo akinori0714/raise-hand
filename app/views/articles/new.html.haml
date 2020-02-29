@@ -3,16 +3,16 @@
     .article__new-create__image
       %p ニュース画像を添付して下さい
       .article__new-create__image__tab
-        = f.attachment_field :image, class: "project-image"
+        = f.attachment_field :image, class: "article-image"
 
     .article__new-create__title
       %h2 ニュースタイトル
       .article__new-create__title__tab
         = f.text_field :title, class: "article-title", placeholder: "ニュースタイトルを入力してください"
 
-    .article__new-create__context
+    .article__new-create__title
       %h2 ニュース記事
-      .article__new-create__context__tab
+      .article__new-create__title__tab
         = f.text_area :context, class: "article-context", placeholder: "ニュース本文を入力してください"
 
     .article__new-create__button
