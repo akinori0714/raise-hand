@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get 'category'
+      get 'set_parent'
     end
   end
   resources :relationships, only: [:create, :destroy]
@@ -16,7 +17,6 @@ Rails.application.routes.draw do
       resources :chats, only: :index, defaults: { format: 'json' }
     end
   end
-  resources :scouts
   resources :mypages
   resources :projects
   resources :articles

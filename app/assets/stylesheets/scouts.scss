@@ -1,24 +1,52 @@
-.parents_list{
-  padding: 60px;
+.user-search{
   float: left;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  .parent_category{
-    background-color: gold;
+  width: 200px;
+  margin: 63px 20px 0 40px;
+  .keyword-search{
+    position: relative;
+    margin-bottom: 20px;
+    input{
+      padding: 5px;
+      font-size: 14px;
+    }
+    button{
+      border: none;
+      position: absolute;
+      top: 35px;
+      right: 10px;
+    }
+  }
+  p{
+    margin-bottom: 5px;
     font-size: 14px;
-    padding: 5px;
-    border: solid 1px gray;
+    font-weight: bold;
+  }
+  .cageroy-search{
+    ul.parent{
+      li{
+        border: solid 1px gray;
+        padding: 5px;
+        font-size: 14px;
+        background-color: gold;
+      }
+    }
+    ul.child{
+      li{
+        font-size: 14px;
+        background-color: white;
+      }
+    }
   }
 }
 
 
 .scout-page{
-  padding: 25px 150px 40px 150px;
+  padding: 25px 40px 40px 150px;
 }
 
 .scout{
   &__index{
+    position: relative;
     h1{
       font-size: 24px;
       font-weight: bold;
@@ -29,6 +57,19 @@
       display: flex;
       align-content: space-between;
       flex-wrap: wrap;
+      .pagination{
+        position: absolute;
+        left: 155px;
+        font-size: 14px;
+        top: 4px;
+        width: 100%;
+        ul{
+          display: flex;
+          li{
+            margin-right: 10px;
+          }
+        }
+      }
       &__block{
         text-decoration: none;
         margin-right: 20px;

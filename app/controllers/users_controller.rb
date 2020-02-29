@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.where.not(id: current_user.id)
+    @users = User.paginate(page: params[:page], per_page: 20).search(params[:search])
     @parents = Category.where(ancestry: nil)
   end
 
@@ -32,6 +33,15 @@ class UsersController < ApplicationController
     @category = Category.find(params[:id])
     @categorys = @category.children
     respond_to do |format|
+      format.json
+    end
+  end
+
+  def set_parent
+    @parents = Category.where(ancestry: nil)
+    @children = Category.find(params[:id]).children
+    respond_to do |format|
+      format.html
       format.json
     end
   end

@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  // カテゴリー選択
+  // カテゴリー選択（ユーザー登録画面）
   function buildHTML(params){
     var category_option = ""
     params.forEach(function (category){
@@ -11,7 +11,7 @@ $(document).on('turbolinks:load', function() {
                 </select>`
     return html;
   };
-  // 親カテゴリー選択後のイベント
+  // 親カテゴリー選択後のイベント（ユーザー登録画面）
   $('#large-category').change(function(){
     var category_id = $('#large-category option:selected').val();
     $('#middle-category').empty();
