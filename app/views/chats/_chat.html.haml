@@ -3,7 +3,10 @@
   .chat{"data-chat_id": chat.id}
     .chat__upper
       .chat__upper__user-icon
-        = attachment_image_tag chat.user, :image, class: "chat-user-image"
+        - if chat.user.image.nil?
+          = image_tag("default_icon.jpg", class: "user-image")
+        - else
+          = attachment_image_tag chat.user, :image, class: "user-image"
       .chat__upper__user-name
         = chat.user.name
       .chat__upper__date

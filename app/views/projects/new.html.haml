@@ -24,10 +24,10 @@
         .project__new-create__name__tab
           = f.text_area :explain, class: "project-explain", placeholder: "プロジェクト概要を入力してください"
 
-      .project__new-create__url
+      .project__new-create__name
         %h2 URL
-        .project__new-create__url__tab
-          = f.text_field :url, class: "url-input", placeholder: "参考になるURLがある方は添付してください"
+        .project__new-create__name__tab
+          = f.text_field :url, class: "project-name", placeholder: "参考になるURLがある方は添付してください"
 
       .project__new-create__name
         %h3 必須
@@ -50,10 +50,10 @@
         .project__new-create__name__tab
           = f.text_field :jointype, class: "project-name", placeholder: "例） 東京の起業家同士でお酒を交わしながら、意見交流したい方募集しています。"
       
-      .project__new-create__url
+      .project__new-create__name
         %h2 報酬条件
-        .project__new-create__url__tab
-          = f.text_field :reward, class: "url-input", placeholder: "例） 東京の起業家同士でお酒を交わしながら、意見交流したい方募集しています。"
+        .project__new-create__name__tab
+          = f.text_field :reward, class: "project-name", placeholder: "例） 東京の起業家同士でお酒を交わしながら、意見交流したい方募集しています。"
       
       .project__new-create__button
         = f.submit "保存", class: "project-btn"
