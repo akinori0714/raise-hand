@@ -22,5 +22,17 @@ Rails.application.routes.draw do
   resources :articles
   resources :dms, only: [:create]
   resources :rooms, only: [:create, :show, :index]
-
+  resources :footers, only: [:index] do
+    collection do
+      get 'howtouse'
+      get 'price'
+      get 'beginner'
+      get 'guide'
+      get 'question'
+      get 'contact'
+      get 'termofservice'
+      get 'special'
+      get 'protect'
+    end
+  end
 end

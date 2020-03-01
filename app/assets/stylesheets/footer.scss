@@ -1,0 +1,41 @@
+.footer{
+  background-color: #262626;
+  display: flex;
+  color: white;
+  padding: 50px 100px 80px 100px;
+  position: relative;
+  &__page-up-button{
+    position: absolute;
+    right: 50px;
+    top: 20px;
+    font-size: 14px;
+    button{
+      background-color: #262626;
+      color:white;
+      border: none;
+      font-size: 14px;
+    }
+  }
+  &__tab{
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+    h2{
+      text-decoration: underline;
+      color: gold;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .footer-tab{
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: white;
+    }
+  }
+  &__right{
+    position: absolute;
+    left: 40%;
+    bottom: 30px;
+    font-size: 12px;
+  }
+}
