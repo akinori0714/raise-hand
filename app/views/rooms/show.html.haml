@@ -1,0 +1,27 @@
+= render "shared/header"
+
+.dm-show
+  - if @dms.present?
+    - @dms.each do |m|
+      .dm-show__message
+        .dm-show__message__image
+          - if m.user.image.nil?
+            = image_tag("default_icon.jpg", class: "user-image")
+          - else
+            = attachment_image_tag m.user, :image, class: "user-image"
+        .dm-show__message__name
+          = m.user.name
+        .dm-show__message__date
+          = Dm.find_by(id: m.room.dm_ids.last).created_at.strftime("%m月%d日 %H時%M分")
+        .dm-show__message__content
+          = m.content
+  - else
+    %h3.text-center メッセージはまだありません
+
+  .dm-show__submit
+    = form_for @dm do |f|
+      .dm-show__submit__input
+        = f.text_area :content, :placeholder => "メッセージを入力して下さい", class: "dm-input"
+        = f.hidden_field :room_id, value: @room.id
+      .dm-show__submit__button
+        = f.submit "送信", class: "dm-submit"

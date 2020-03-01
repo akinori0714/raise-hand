@@ -42,5 +42,8 @@ class User < ApplicationRecord
       all #全て表示。User.は省略
     end
   end
+
+  has_many :dms, dependent: :destroy
+  has_many :entries, dependent: :destroy
   
 end

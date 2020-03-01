@@ -35,7 +35,17 @@
         = render partial: "relationships/follow_button", user: @user
       .mypage__content__button__dm
         %button
-          = icon('fas', 'envelope', class: "dm-btn")
+        - if @user.id == current_user.id
+        - else
+          - if @isRoom == true
+            = link_to rooms_path(@roomId) do
+              = icon('fas', 'envelope', class: "dm-btn")
+          - else
+            = form_for @room do |f|
+              = fields_for @entry do |e|
+                = e.hidden_field :user_id, value: @user.id
+              = f.submit "チャットを始める"
+
 
     .mypage__content__tab2
       .mypage__content__tab2__name

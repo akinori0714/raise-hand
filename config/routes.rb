@@ -20,5 +20,7 @@ Rails.application.routes.draw do
   resources :mypages
   resources :projects
   resources :articles
+  resources :dms, only: [:create]
+  resources :rooms, only: [:create, :show, :index]
 
 end
