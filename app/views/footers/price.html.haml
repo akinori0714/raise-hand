@@ -3,5 +3,56 @@
 .price-plan
   %h2 料金プラン
   %p 表示価格は消費税込みの料金となります。
+  .price-plan__detail
+    %table{border: "1"}
+      %thead
+        %tr
+          %th 項目
+          %th 無料プラン
+          %th 有料プラン
+      %tbody
+        %tr
+          %td 料金
+          %td 無料
+          %td 550円/月
+      %tbody
+        %tr
+          %td 申込
+          %td ---
+          %td
+            = link_to "申込", "#", class: "price-plan-submit"
+      %tbody
+        %tr
+          %td コミュニティ作成/参加
+          %td ○
+          %td ○
+      %tbody
+        %tr
+          %td チャット
+          %td ○
+          %td ○
+      %tbody
+        %tr
+          %td ユーザー検索/閲覧
+          %td ○
+          %td ○
+      %tbody
+        %tr
+          %td ユーザーフォロー
+          %td ○
+          %td ○
+      %tbody
+        %tr
+          %td プロジェクト作成/閲覧
+          %td ○
+          %td ○
+      %tbody
+        %tr
+          %td DM
+          %td ---
+          %td ○
+  .price-plan__notice
+    %p ※ 本サービスは無料でもご使用頂けます。
+    %p ※ ユーザーとのメッセージの送受信は有料プランのみの機能となります。
 
 = render "shared/footer2"
