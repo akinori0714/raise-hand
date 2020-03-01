@@ -1,0 +1,95 @@
+.dm{
+  padding: 100px 300px;
+  th{
+    width: 900px;
+    border-bottom: solid 1px gray;
+  }
+  &__index{
+    display: flex;
+    margin: 20px 0;
+    color: black;
+    position: relative;
+    border-bottom: solid 1px gray;
+    width: 100%;
+    &__image{
+      margin-right: 10px;
+      .user-image{
+        height: 70px;
+        width: 70px;
+        border-radius: 300px;
+      }
+    }
+    &__name{
+      position: absolute;
+      top: 10px;
+      left: 100px;
+
+    }
+    &__date{
+      font-size: 14px;
+      color: gray;
+      position: absolute;
+      top: 40px;
+      left: 100px;
+    }
+    &__content{
+      position: absolute;
+      left: 320px;
+      top: 10px;
+    }
+  }
+}
+
+.dm-show{
+  padding: 100px 300px;
+  &__message{
+    border-bottom: solid 1px gray;
+    padding: 20px;
+    position: relative;
+    &__image{
+      .user-image{
+        height: 50px;
+        width: 50px;
+        border-radius: 300px;
+      }
+    }
+    &__name{
+      position: absolute;
+      top: 22px;
+      left: 85px;
+    }
+    &__date{
+      position: absolute;
+      top: 50px;
+      left: 85px;
+      color: gray;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    &__content{
+      margin-top: 30px;
+      margin-left: 65px;
+    }
+  }
+  &__submit{
+    &__input{
+      margin-top: 30px;
+      .dm-input{
+        padding: 10px;
+        width: 100%;
+        height: 300px;
+      }
+    }
+    &__button{
+      text-align: center;
+      margin-top: 20px;
+      .dm-submit{
+        background-color: gold;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.28);
+        border-radius: 3px;
+        padding: 10px 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}

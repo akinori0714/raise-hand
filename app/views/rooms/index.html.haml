@@ -1,0 +1,22 @@
+= render "shared/header"
+
+.dm
+  %table
+    %thead
+      %tr
+        %th 宛先
+
+    %tbody
+      %tr
+        %td
+          - @anotherEntries.each do |e|
+            = link_to room_path(e.room.id) do
+              .dm__index
+                .dm__index__image
+                  = attachment_image_tag e.user, :image, class: "user-image"
+                .dm__index__name
+                  = e.user.name
+                .dm__index__date
+                  = Dm.find_by(id: e.room.dm_ids.last).created_at.strftime("%Y年%m月%d日 %H時%M分")
+                .dm__index__content
+                  = Dm.find_by(id: e.room.dm_ids.last).content

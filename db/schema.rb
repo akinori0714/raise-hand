@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200220092448) do
+ActiveRecord::Schema.define(version: 20200229125614) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",      null: false
@@ -56,6 +56,25 @@ ActiveRecord::Schema.define(version: 20200220092448) do
     t.index ["user_id"], name: "index_community_users_on_user_id", using: :btree
   end
 
+  create_table "dms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "room_id"
+    t.text     "content",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["room_id"], name: "index_dms_on_room_id", using: :btree
+    t.index ["user_id"], name: "index_dms_on_user_id", using: :btree
+  end
+
+  create_table "entries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_entries_on_room_id", using: :btree
+    t.index ["user_id"], name: "index_entries_on_user_id", using: :btree
+  end
+
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",          null: false
     t.string   "explain",       null: false
@@ -81,12 +100,17 @@ ActiveRecord::Schema.define(version: 20200220092448) do
     t.index ["user_id"], name: "index_relationships_on_user_id", using: :btree
   end
 
+  create_table "rooms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                   null: false
     t.string   "sex",                                    null: false
     t.string   "age",                                    null: false
     t.string   "area",                                   null: false
-    t.string   "industry",                               null: false
     t.string   "skill",                                  null: false
     t.string   "performance",                            null: false
     t.string   "introduce",                              null: false
@@ -109,6 +133,10 @@ ActiveRecord::Schema.define(version: 20200220092448) do
 
   add_foreign_key "chats", "communities"
   add_foreign_key "chats", "users"
+  add_foreign_key "dms", "rooms"
+  add_foreign_key "dms", "users"
+  add_foreign_key "entries", "rooms"
+  add_foreign_key "entries", "users"
   add_foreign_key "relationships", "users"
   add_foreign_key "relationships", "users", column: "follow_id"
   add_foreign_key "users", "categories"
