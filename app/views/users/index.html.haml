@@ -16,3 +16,5 @@
       .scout__index__big
         = will_paginate @users, :previous_label => ' &lt 前へ', :next_label => '次へ &gt'
         = render partial: "shared/user-detail", collection: @users, as: :user
+
+= render "shared/footer"

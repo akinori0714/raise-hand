@@ -1,0 +1,24 @@
+.footer
+  .footer__page-up-button
+    %button.page-top-button TOPへ戻る
+  .footer__tab
+    %h2 Shake × handsについて
+    = link_to "トップページ", "howtouse", class: "footer-tab"
+    = link_to "料金プラン", "price", class: "footer-tab"
+    = link_to "コミュニティ", communities_path, class: "footer-tab"
+    = link_to "スカウト", users_path, class: "footer-tab"
+    = link_to "プロジェクト", projects_path, class: "footer-tab"
+    = link_to "ニュース", articles_path, class: "footer-tab"
+  .footer__tab
+    %h2 サポート
+    = link_to "初めての方へ", "beginner", class: "footer-tab"
+    = link_to "ご利用ガイドライン", "guide", class: "footer-tab"
+    = link_to "よくある質問", "question", class: "footer-tab"
+    = link_to "お問い合わせ", "contact", class: "footer-tab"
+  .footer__tab
+    %h2 会社情報
+    = link_to "利用規約", "termofservice", class: "footer-tab"
+    = link_to "特定商取引法に基づく表記", "special", class: "footer-tab"
+    = link_to "個人情報保護方針", "protect", class: "footer-tab"
+  .footer__right
+    %p Copyright ©Shake × Hands All Rights Reserved.

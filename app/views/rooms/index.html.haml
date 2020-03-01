@@ -20,3 +20,5 @@
                   = Dm.find_by(id: e.room.dm_ids.last).created_at.strftime("%Y年%m月%d日 %H時%M分")
                 .dm__index__content
                   = Dm.find_by(id: e.room.dm_ids.last).content
+
+= render "shared/footer"
