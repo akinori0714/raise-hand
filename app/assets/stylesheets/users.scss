@@ -47,6 +47,14 @@
       }
     }
   }
+  .login {
+    margin-bottom: 10px;
+    .login-input {
+      padding: 10px;
+      letter-spacing: 1px;
+      width: 100%;
+    }
+  }
   .field2 {
     margin-bottom: 10px;
     display: flex;
@@ -114,6 +122,8 @@
     text-align: center;
     border: none;
     border-radius: 2px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.28);
   }
 
   input[type='submit'] {
