@@ -1,3 +1,48 @@
 = render "shared/header"
 
+.beginner
+  .beginner__title
+    %h2 初めての方へ
+  .beginner__tab
+    %h3 コミュニティ
+    .beginner__tab__content
+      .beginner__tab__content__image
+        = link_to image_tag(src= "community.jpg", class: "service-image"), communities_path
+      .beginner__tab__content__text
+        %p ・自由にコミュニティ作成、参加、閲覧可能です。
+        %p ・チャット機能を使って、他のユーザーと交流しましょう。
+        %p ・交流会などオフラインで交流できるコミュニティを作りましょう。
+        %p ・運営も積極的にコミュニティを作り、イベントを企画します。
+        %p ・無料で利用できます。
+  .beginner__tab
+    %h3 スカウト
+    .beginner__tab__content
+      .beginner__tab__content__image
+        = link_to image_tag(src= "scout.jpg", class: "service-image"), users_path
+      .beginner__tab__content__text
+        %p ・あなたが繋がりたい起業家を見つけ、繋がりを持ちましょう。
+        %p ・名前、職業など条件別に起業家を検索してみましょう。
+        %p ・自己紹介文や繋がりたい人などプロフィール欄を充実させると、
+        %p 　他の起業家から連絡が来やすいですよ。
+        %p ・DMを送り、実際に気になった起業家と連絡を取りましょう。
+        %p ・一部無料で利用できます。
+  .beginner__tab
+    %h3 プロジェクト
+    .beginner__tab__content
+      .beginner__tab__content__image
+        = link_to image_tag(src= "project.jpg", class: "service-image"), projects_path
+      .beginner__tab__content__text
+        %p ・自由にプロジェクト作成、閲覧可能です。
+        %p ・魅力的なプロジェクトページを作りましょう。
+        %p ・あなたの想いを綴り、力になってくれる仲間を、見つけましょう。
+        %p ・プロジェクトに共感したら、実際に連絡取ってみましょう。
+        %p ・無料で利用できます。
+  .beginner__tab
+    %h3 よくある質問
+    .beginner__tab__content
+      .beginner__tab__content__image
+        = link_to image_tag(src= "question.jpg", class: "service-image"), "#"
+      .beginner__tab__content__text
+        %p ・よくある質問をまとめました。
+
 = render "shared/footer2"
