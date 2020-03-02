@@ -27,7 +27,6 @@ Rails.application.routes.draw do
       get 'howtouse'
       get 'price'
       get 'beginner'
-      get 'guide'
       get 'question'
       get 'contact'
       get 'termofservice'

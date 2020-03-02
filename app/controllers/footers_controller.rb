@@ -9,9 +9,6 @@ class FootersController < ApplicationController
   def beginner
   end
 
-  def guide
-  end
-
   def question
   end
 
