@@ -1,0 +1,21 @@
+.question{
+  padding: 100px 300px;
+  h2{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+  &__tab{
+    border: solid 2px gold;
+    margin-bottom: 50px;
+    h4{
+      font-weight: bold;
+      padding: 10px 20px;
+      background-color: gold;
+    }
+    &__text{
+      padding: 20px;
+    }
+  }
+}

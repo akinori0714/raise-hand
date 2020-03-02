@@ -1,0 +1,33 @@
+.termofservice{
+  padding: 100px 200px;
+  h2{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  &__tab{
+    margin-bottom: 30px;
+    h3{
+      padding: 0.4em 0.5em;/*文字の上下 左右の余白*/
+      color: #494949;/*文字色*/
+      background: #f4f4f4;/*背景色*/
+      border-left: solid 5px gold;/*左線*/
+      border-bottom: solid 3px #d7d7d7;/*下線*/
+      margin-bottom: 10px;
+    }
+    p{
+      margin: 5px 0px;
+      font-size: 14px;
+      color: #696969;
+    }
+    h4{
+      color: black;
+      font-size: 16px;
+    }
+  }
+  p{
+    margin: 5px 0px;
+    font-size: 14px;
+    color: #696969;
+  }
+}
