@@ -46,37 +46,83 @@
           = image_tag('start.jpg', class: 'how-to-use-image')
           .how-to-use__third__title2__image__tab__text
             %p いよいよ仕事開始です。
-  
+
   .how-to-use__forth
     .how-to-use__forth__title
       %h2 Shake × Hands
-      %h3 のサービス
+      %h3 の使用ケース
+    .how-to-use__forth__case
+      %h4 ケース1 　とにかく色々な起業家と繋がりたい
+      .how-to-use__forth__case__tab
+        .how-to-use__forth__case__tab__image
+          = image_tag('交流会.jpg', class: 'how-to-use-image')
+        .how-to-use__forth__case__tab__text
+          %p いざ、起業をしてみよう！何かビジネスを始めてみようと思っても、何をすればいいのか分からない。他の人達はどんなことをしているのだろうか！？そんな風に思ったことはありませんか！？
+          %p そんなあなたの悩みを解決し、あなたのビジネスアイデアのブラッシュアップのサポートを致します。
+          %p そのためにコミュニティ機能を搭載しました！是非とも、有効活用ください！
+          %h5 【こんな方にオススメ】
+          %p ・アイデアは無いけど自分で事業を立ち上げたいので、他の起業家の方の意見を聞いてみたい！
+          %p ・他の方がどんな事業をしているのか見てみたい！
+          %p ・他の方の意見を聞いて、自分のビジネスアイデアのブラッシュアップをしたい！
+        
+    .how-to-use__forth__case
+      %h4 ケース2 　他業種の起業家との協業によるイノベーション
+      .how-to-use__forth__case__tab
+        .how-to-use__forth__case__tab__image
+          = image_tag('partner.jpg', class: 'how-to-use-image')
+        .how-to-use__forth__case__tab__text
+          %p 自動車業界とITとの事業連携。食品業界とITとの事業連携など様々な業界が事業連携を進めています。
+          %p また、集客は得意だけど営業が苦手。コンテンツはあるけど、集客は苦手などの得意不得意もあるかと思います。
+          %p そんなあなたの得意な面を活かし、不得意な面をカバーしてくれる仲間を見つけましょう！！
+          %h5 【こんな方にオススメ】
+          %p ・集客/営業が得意な方と繋がりたい！
+          %p ・エンジニア/プログラマーと繋がりたい！
+          %p ・医療業界/IT業界/食品業界・・・など色んな業種の方を見てみたい！
+
+    .how-to-use__forth__case
+      %h4 ケース3 　魅力的なプロジェクトに参画したい
+      .how-to-use__forth__case__tab
+        .how-to-use__forth__case__tab__image
+          = image_tag('join.jpg', class: 'how-to-use-image')
+        .how-to-use__forth__case__tab__text
+          %p 私は今まで普通に会社員として生活してきたし、今から自分の力で事業を立ち上げるのもハードルが高い。でも、誰かが始めている事業に参加したい！
+          %p そんなことを考えられている方もいるかと思いますので、プロジェクト機能を搭載しました。
+          %p あなたが参画してみたいと思うプロジェクトを見つけてみましょう！！
+          %h5 【こんな方にオススメ】
+          %p ・自分1人で起業するのは、大変なので、誰かのプロジェクトに参画したい！
+          %p ・他の方がどんな事業をしているのか見てみたい！
+          %p ・他の方のビジネスアイデアを参考にしたい！
 
   .how-to-use__fifth
-    .how-to-use__fifth__tab
+    .how-to-use__fifth__title
+      %h2 Shake × Hands
+      %h3 のサービス
+
+  .how-to-use__sixth
+    .how-to-use__sixth__tab
       %h2 コミュニティ
-      .how-to-use__fifth__tab__image
+      .how-to-use__sixth__tab__image
         = link_to image_tag(src= "community.jpg", class: "service-image"), communities_path
-      .how-to-use__fifth__tab__text
+      .how-to-use__sixth__tab__text
         %p すでにあるコミュニティに参加するも良し。自分自身で自由にコミュニティを作るのも良し。チャット機能も活かし、気軽に他のユーザーとコンタクトを取りましょう。
-    .how-to-use__fifth__tab
+    .how-to-use__sixth__tab
       %h2 スカウト
-      .how-to-use__fifth__tab__image
+      .how-to-use__sixth__tab__image
         = link_to image_tag(src= "scout.jpg", class: "service-image"), users_path
-      .how-to-use__fifth__tab__text
+      .how-to-use__sixth__tab__text
         %p 職業、スキル、地域、年齢などあなたが繋がりたい起業家を見つけ、コンタクトを取っていきましょう。最高のビジネスパートナーと繋がることをサポート致します。
-      .how-to-use__fifth__tab__text
-    .how-to-use__fifth__tab
+      .how-to-use__sixth__tab__text
+    .how-to-use__sixth__tab
       %h2 プロジェクト
-      .how-to-use__fifth__tab__image
+      .how-to-use__sixth__tab__image
         = link_to image_tag(src= "project.jpg", class: "service-image"), projects_path
-      .how-to-use__fifth__tab__text
+      .how-to-use__sixth__tab__text
         %p あなたがすでに進めているプロジェクト。またはこれから始めようとしているプロジェクトなど、仲間を探している方は、手をあげて、仲間を募集しましょう。
-    .how-to-use__fifth__tab
+    .how-to-use__sixth__tab
       %h2 ニュース
-      .how-to-use__fifth__tab__image
+      .how-to-use__sixth__tab__image
         = link_to image_tag(src= "news.jpg", class: "service-image"), articles_path
-      .how-to-use__fifth__tab__text
+      .how-to-use__sixth__tab__text
         %p サイト運営から適宜、最新情報をお伝え致します。新機能の搭載やサービスの改善などの報告もこちらで行います。
 
 = render "shared/footer"
