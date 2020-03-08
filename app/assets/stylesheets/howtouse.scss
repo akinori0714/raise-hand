@@ -68,11 +68,12 @@
     }
   }
   &__third{
-    padding: 100px 150px;
     &__title1{
+      padding: 0px 150px;
       display: flex;
       font-size: 30px;
       margin-bottom: 10px;
+      background-color: #262626;
       h2{
         color: gold;
         font-weight: bold;
@@ -81,11 +82,12 @@
       }
       h3{
         line-height: 46px;
-        color: gray;
+        color: white;
         font-weight: bold;
       }
     }
     &__title2{
+      padding: 50px 150px 100px 150px;
       font-size: 35px;
       h4{
         font-weight: bold;
@@ -119,6 +121,61 @@
   }
   &__forth{
     font-size: 30px;
+    background-color: #dcdcdc;
+    padding-bottom: 100px;
+    &__title{
+      display: flex;
+      background-color: #262626;
+      width: 100%;
+      padding: 0 150px;
+      h2{
+        margin-right: 5px;
+        color: gold;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.28);
+      }
+      h3{
+        line-height: 46px;
+        color: white;
+        font-weight: bold;
+      }
+    }
+    &__case{
+      padding: 50px 150px;
+      h4{
+        margin-bottom: 40px;
+        font-size: 30px;
+        font-weight: bold;
+      }
+      &__tab{
+        margin-left: 200px;
+        &__image{
+          .how-to-use-image{
+            height: 500px;
+            width: 750px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.28);
+          }
+        }
+        &__text{
+          text-align: none;
+          width: 750px;
+          h5{
+            margin-top: 30px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+          }
+          p{
+            font-size: 16px;
+            margin-bottom: 10px;
+           }
+        }
+      }
+    }
+  }
+  &__fifth{
+    font-size: 30px;
     background-color: #262626;
     padding: 0 150px;
     &__title{
@@ -136,10 +193,9 @@
       }
     }
   }
-  &__fifth{
+  &__sixth{
     justify-content: space-around;
     padding: 50px 150px;
-    background-color: #dcdcdc;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
