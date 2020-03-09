@@ -35,6 +35,7 @@
   .field {
     margin-bottom: 10px;
     display: flex;
+    position: relative;
     .field-label {
       padding: 10px 0;
       letter-spacing: 1px;
@@ -45,6 +46,18 @@
         width: 300px;
 
       }
+    }
+    h3{
+      background-color: red;
+      position: absolute;
+      left: -55px;
+      top: 6px;
+      color: white;
+      padding: 4px;
+      width: 38px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
     }
   }
   .login {
@@ -59,6 +72,19 @@
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    h3{
+      background-color: red;
+      position: absolute;
+      left: -55px;
+      top: 6px;
+      color: white;
+      padding: 4px;
+      width: 38px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+    }
     .field2-label {
       padding: 10px 0;
       letter-spacing: 1px;
@@ -100,30 +126,50 @@
         letter-spacing: 1px;
       }
     }
-    .field-text-area {
-      textarea {
-        height: 200px;
-        width: 400px;
-        padding: 10px;
-        letter-spacing: 1px;
-      }
-    }
+  }
 
   .actions{
     text-align: center;
+    .btn {
+      margin-top: 20px;
+      display: inline-block;
+      height: 50px;
+      padding: 0 30px;
+      line-height: 50px;
+      letter-spacing: 1px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 2px;
+      border-radius: 5px;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.28);
+      background-color: gold;
+    }
   }
 
-  .btn {
-    display: inline-block;
-    height: 50px;
-    padding: 0 30px;
-    line-height: 50px;
-    letter-spacing: 1px;
-    text-align: center;
-    border: none;
-    border-radius: 2px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.28);
+  .field-introduce{
+    position: relative;
+    h3{
+      background-color: red;
+      position: absolute;
+      left: -55px;
+      top: -2px;
+      color: white;
+      padding: 4px;
+      width: 38px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .field-introduce-textarea{
+      margin-top: 10px;
+      margin-bottom: 20px;
+      textarea {
+        height: 300px;
+        width: 100%;
+        padding: 10px;
+        letter-spacing: 1px;
+        
+    } 
   }
 
   input[type='submit'] {

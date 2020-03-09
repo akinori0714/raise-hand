@@ -8,6 +8,7 @@
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
         .field
+          %h3 必須
           .field-label
             = f.label :名前
           .field-input
@@ -18,26 +19,31 @@
           .field-input
             = f.attachment_field :image, autofocus: true
         .field
+          %h3 必須
           .field-label
             = f.label :性別
           .field-select
             = f.select :sex, ["男性", "女性"], prompt: "---"
         .field
+          %h3 必須
           .field-label
             = f.label :年齢
           .field-select
             = f.select :age, ["10代", "20歳~24歳", "25歳~29歳", "30歳~34歳", "35歳~39歳", "40歳~44歳", "45歳~49歳", "50歳~54歳", "55歳~59歳", "60歳〜"], prompt: "---"
-        .field
-          .field-label
+        .field-introduce
+          %h3 必須
+          .field-introduce-label
             = f.label :自己紹介文
-          .field-text-area
+          .field-introduce-textarea
             = f.text_area :introduce, autofocus: true, placeholder: "例）初めまして。山田太郎と言います。エンジニア歴10年で、現在会社員をしています。近い内に脱サラしようと考えています。フリーランスで案件を獲得しつつ、スタートアップ案件にも挑戦したいと考えていますので、エンジニア不足の起業家様にはお力添えできるかと思います。"
         .field
+          %h3 必須
           .field-label
             = f.label :地域
           .field-select
             = f.select :area, ["北海道", "青森", "岩手", "宮城", "秋田", "山形", "福島", "茨城", "栃木", "群馬", "埼玉", "東京", "神奈川", "千葉", "新潟", "富山", "石川", "福井", "山梨", "長野", "愛知", "岐阜", "三重", "滋賀", "京都", "大阪", "兵庫", "奈良", "和歌山", "鳥取", "島根", "岡山", "広島", "山口", "徳島", "香川", "愛媛", "高知", "福岡", "佐賀", "長崎", "熊本", "大分", "宮崎", "鹿児島", "沖縄"], prompt: "---"
         .field2
+          %h3 必須
           .field2-label
             = f.label :職業
           .field2-select
@@ -45,6 +51,7 @@
               = f.collection_select(:category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---"})
             #middle-category
         .field
+          %h3 必須
           .field-label
             = f.label :スキル
           .field-input
@@ -60,23 +67,29 @@
           .field-input
             = f.text_field :project
         .field
+          %h3 必須
           .field-label
             = f.label :参画形態
           .field-select
-            = f.label :フルタイム
-            = f.check_box :join_type, id: :join_type_checkbox
-            = f.label :週末のみ
-            = f.check_box :join_type, id: :join_type_checkbox
-            = f.label :無給期間あり
-            = f.check_box :join_type, id: :join_type_checkbox
-            = f.label :報酬あり
-            = f.check_box :join_type, id: :join_type_checkbox
-            = f.label :参画形態は要相談
-            = f.check_box :join_type, id: :join_type_checkbox
-            = f.label :経営陣として参画したい
-            = f.check_box :join_type, id: :join_type_checkbox
-            = f.label :従業員として参画したい
-            = f.check_box :join_type, id: :join_type_checkbox
+            - ["black","white","blue","brown"].each do |join_type|
+              = f.check_box :join_type, {multiple: true}, join_type, nil
+              = join_type
+
+            -# = f.label :フルタイム
+            -# = f.check_box :join_type, id: :join_type_checkbox, value: "フルタイム"
+            -# = f.label :週末のみ
+            -# = f.check_box :join_type, id: :join_type_checkbox
+            -# = f.label :無給期間あり
+            -# = f.check_box :join_type, id: :join_type_checkbox
+            -# = f.label :報酬あり
+            -# = f.check_box :join_type, id: :join_type_checkbox
+            -# = f.label :参画形態は要相談
+            -# = f.check_box :join_type, id: :join_type_checkbox
+            -# = f.label :経営陣として参画したい
+            -# = f.check_box :join_type, id: :join_type_checkbox
+            -# = f.label :従業員として参画したい
+            -# = f.check_box :join_type, id: :join_type_checkbox
+
         .field
           .field-label
             = f.label :やってみたいこと
@@ -88,17 +101,20 @@
           .field-input
             = f.text_field :want_to_meet
         .field
+          %h3 必須
           .field-label
             = f.label :メール
           .field-input
             = f.email_field :email
         .field
+          %h3 必須
           .field-label
             = f.label :パスワード
             %i (英数字8文字以上)
           .field-input
             = f.password_field :password, autocomplete: "off"
         .field
+          %h3 必須
           .field-label
             = f.label :パスワード（確認用）
           .field-input
