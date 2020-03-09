@@ -117,7 +117,6 @@ ActiveRecord::Schema.define(version: 20200229125614) do
     t.string   "project",                                null: false
     t.string   "want_to_do",                             null: false
     t.string   "want_to_meet",                           null: false
-    t.string   "join_type",                              null: false
     t.string   "image_id",               default: ""
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -128,6 +127,7 @@ ActiveRecord::Schema.define(version: 20200229125614) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "admin",                  default: false
+    t.string   "join_type",                              null: false
     t.index ["category_id"], name: "index_users_on_category_id", using: :btree
   end
 
