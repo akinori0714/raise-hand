@@ -13,10 +13,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :skill,              null: false
       t.string :performance,        null: false
       t.string :introduce,          null: false
-      t.string :project,            null: false
-      t.string :want_to_do,         null: false
-      t.string :want_to_meet,       null: false
-      t.string :join_type,          null: false
+      t.string :project,            null: false, array: true
+      t.string :want_to_do,         null: false, array: true
+      t.string :want_to_meet,       null: false, array: true
+      t.string :jointype,           null: false, array: true
       t.string :image_id,                        default: ""
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""

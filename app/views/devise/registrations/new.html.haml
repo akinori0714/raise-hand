@@ -66,29 +66,13 @@
             = f.label :興味あるプロジェクト
           .field-input
             = f.text_field :project
-        .field
-          %h3 必須
-          .field-label
-            = f.label :参画形態
-          .field-select
-            - ["black","white","blue","brown"].each do |join_type|
-              = f.check_box :join_type, {multiple: true}, join_type, nil
-              = join_type
 
-            -# = f.label :フルタイム
-            -# = f.check_box :join_type, id: :join_type_checkbox, value: "フルタイム"
-            -# = f.label :週末のみ
-            -# = f.check_box :join_type, id: :join_type_checkbox
-            -# = f.label :無給期間あり
-            -# = f.check_box :join_type, id: :join_type_checkbox
-            -# = f.label :報酬あり
-            -# = f.check_box :join_type, id: :join_type_checkbox
-            -# = f.label :参画形態は要相談
-            -# = f.check_box :join_type, id: :join_type_checkbox
-            -# = f.label :経営陣として参画したい
-            -# = f.check_box :join_type, id: :join_type_checkbox
-            -# = f.label :従業員として参画したい
-            -# = f.check_box :join_type, id: :join_type_checkbox
+        .field3
+          %h3 必須
+          .field3-label
+            = f.label :参画形態
+          .field3-select
+            = f.collection_check_boxes :jointype, Jointype.all, :name, :name
 
         .field
           .field-label

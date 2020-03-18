@@ -1,0 +1,11 @@
+ja:
+  enums:
+    user:
+      jointype:
+        fulltime: フルタイム
+        weekend: 週末のみ
+        subtask: 副業として
+        commit: 本格起業
+        short: 短期参画
+        long: 長期参画
+        money: 無給期間あり

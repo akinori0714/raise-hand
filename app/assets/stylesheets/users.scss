@@ -43,7 +43,7 @@
       font-weight: 200;
       width: 100%;
       select{
-        width: 300px;
+        width: 200px;
 
       }
     }
@@ -111,6 +111,37 @@
       }
     }
 
+    .field3{
+      margin-bottom: 10px;
+      display: flex;
+      position: relative;
+      h3{
+        background-color: red;
+        position: absolute;
+        left: -55px;
+        top: 6px;
+        color: white;
+        padding: 4px;
+        width: 38px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .field3-label {
+        padding: 10px 0;
+        letter-spacing: 1px;
+        font-size: 16px;
+        width: 100%;
+      }
+      .field3-select{
+        font-size: 14px;
+        width: 940px;
+        label{
+          margin-right: 20px;
+        }
+      }
+    }
+
     .field-input {
       input {
         width: 400px;
@@ -121,9 +152,12 @@
     .field-select {
       select {
         height: 30px;
-        width: 200px;
+        width: 300px;
         padding: 10px;
         letter-spacing: 1px;
+      }
+      label{
+        font-size: 14px;
       }
     }
   }

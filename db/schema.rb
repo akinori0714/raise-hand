@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200229125614) do
+ActiveRecord::Schema.define(version: 20200317051014) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",      null: false
@@ -75,6 +75,12 @@ ActiveRecord::Schema.define(version: 20200229125614) do
     t.index ["user_id"], name: "index_entries_on_user_id", using: :btree
   end
 
+  create_table "jointypes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",          null: false
     t.string   "explain",       null: false
@@ -106,17 +112,28 @@ ActiveRecord::Schema.define(version: 20200229125614) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_joins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "jointype_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["jointype_id"], name: "index_user_joins_on_jointype_id", using: :btree
+    t.index ["user_id"], name: "index_user_joins_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                   null: false
     t.string   "sex",                                    null: false
     t.string   "age",                                    null: false
     t.string   "area",                                   null: false
+    t.string   "industry",                               null: false
     t.string   "skill",                                  null: false
     t.string   "performance",                            null: false
     t.string   "introduce",                              null: false
     t.string   "project",                                null: false
     t.string   "want_to_do",                             null: false
     t.string   "want_to_meet",                           null: false
+    t.string   "jointype",                               null: false
     t.string   "image_id",               default: ""
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -127,7 +144,6 @@ ActiveRecord::Schema.define(version: 20200229125614) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "admin",                  default: false
-    t.string   "join_type",                              null: false
     t.index ["category_id"], name: "index_users_on_category_id", using: :btree
   end
 
@@ -139,5 +155,7 @@ ActiveRecord::Schema.define(version: 20200229125614) do
   add_foreign_key "entries", "users"
   add_foreign_key "relationships", "users"
   add_foreign_key "relationships", "users", column: "follow_id"
+  add_foreign_key "user_joins", "jointypes"
+  add_foreign_key "user_joins", "users"
   add_foreign_key "users", "categories"
 end
