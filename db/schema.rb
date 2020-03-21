@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200317051014) do
+ActiveRecord::Schema.define(version: 20200321150325) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",      null: false
@@ -167,7 +167,6 @@ ActiveRecord::Schema.define(version: 20200317051014) do
     t.string   "performance4"
     t.string   "performance5"
     t.string   "introduce",                              null: false
-    t.string   "project",                                null: false
     t.string   "want_to_do",                             null: false
     t.string   "want_to_meet",                           null: false
     t.string   "jointype",                               null: false
@@ -197,6 +196,18 @@ ActiveRecord::Schema.define(version: 20200317051014) do
     t.index ["skill3_id"], name: "index_users_on_skill3_id", using: :btree
     t.index ["skill4_id"], name: "index_users_on_skill4_id", using: :btree
     t.index ["skill5_id"], name: "index_users_on_skill5_id", using: :btree
+  end
+
+  create_table "wanttodos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wanttomeets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "chats", "communities"

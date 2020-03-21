@@ -71,7 +71,7 @@
               = f.collection_select(:skill2_id, Skill2.where(ancestry: nil), :id, :name, {prompt: "---"})
             #middle2-category
             #small2-category
-              = f.select :skill1_period, ["1年未満", "1年〜3年", "3年〜5年", "5年〜10年", "10年以上"], prompt: "---"
+              = f.select :skill2_period, ["1年未満", "1年〜3年", "3年〜5年", "5年〜10年", "10年以上"], prompt: "---"
 
         .field2
           .field2-label
@@ -81,7 +81,7 @@
               = f.collection_select(:skill3_id, Skill3.where(ancestry: nil), :id, :name, {prompt: "---"})
             #middle3-category
             #small3-category
-              = f.select :skill1_period, ["1年未満", "1年〜3年", "3年〜5年", "5年〜10年", "10年以上"], prompt: "---"
+              = f.select :skill3_period, ["1年未満", "1年〜3年", "3年〜5年", "5年〜10年", "10年以上"], prompt: "---"
 
         .field2
           .field2-label
@@ -91,7 +91,7 @@
               = f.collection_select(:skill4_id, Skill4.where(ancestry: nil), :id, :name, {prompt: "---"})
             #middle4-category
             #small4-category
-              = f.select :skill1_period, ["1年未満", "1年〜3年", "3年〜5年", "5年〜10年", "10年以上"], prompt: "---"
+              = f.select :skill4_period, ["1年未満", "1年〜3年", "3年〜5年", "5年〜10年", "10年以上"], prompt: "---"
 
         .field2
           .field2-label
@@ -101,7 +101,7 @@
               = f.collection_select(:skill5_id, Skill5.where(ancestry: nil), :id, :name, {prompt: "---"})
             #middle5-category
             #small5-category
-              = f.select :skill1_period, ["1年未満", "1年〜3年", "3年〜5年", "5年〜10年", "10年以上"], prompt: "---"
+              = f.select :skill5_period, ["1年未満", "1年〜3年", "3年〜5年", "5年〜10年", "10年以上"], prompt: "---"
 
         .field
           .field-label
@@ -132,12 +132,6 @@
             = f.label :実績⑤（任意）
           .field-input
             = f.text_field :performance5, autofocus: true
-        
-        .field
-          .field-label
-            = f.label :興味あるプロジェクト
-          .field-input
-            = f.text_field :project
 
         .field3
           %h3 必須
@@ -146,16 +140,18 @@
           .field3-select
             = f.collection_check_boxes :jointype, Jointype.all, :name, :name
 
-        .field
-          .field-label
+        .field4
+          .field4-label
             = f.label :やってみたいこと
-          .field-input
-            = f.text_field :want_to_do
-        .field
-          .field-label
+          .field4-input
+            = f.collection_check_boxes :want_to_do, Wanttodo.all, :name, :name
+
+        .field4
+          .field4-label
             = f.label :繋がりたい人
-          .field-input
-            = f.text_field :want_to_meet
+          .field4-input
+            = f.collection_check_boxes :want_to_meet, Wanttomeet.all, :name, :name
+
         .field
           %h3 必須
           .field-label

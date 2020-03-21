@@ -58,5 +58,7 @@ class User < ApplicationRecord
   has_many :entries, dependent: :destroy
   has_many :jointypes, through: :user_joins
   has_many :user_joins
+  has_many :wanttodos
+  has_many :wanttomeets
   
 end
