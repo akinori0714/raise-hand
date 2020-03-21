@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def new
     @categorys = Category.where(ancestry: nil)
+    @skill1s = Skill1.where(ancestry: nil)
   end
 
   def create
@@ -50,6 +51,14 @@ class UsersController < ApplicationController
   def category
     @category = Category.find(params[:id])
     @categorys = @category.children
+    respond_to do |format|
+      format.json
+    end
+  end
+
+  def skill
+    @skill1 = Skill1.find(params[:id])
+    @skill1s = @skill1.children
     respond_to do |format|
       format.json
     end

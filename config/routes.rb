@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     collection do
       get 'category'
       get 'set_parent'
+      get "skill"
     end
   end
   resources :relationships, only: [:create, :destroy]

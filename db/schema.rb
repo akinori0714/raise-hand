@@ -112,6 +112,41 @@ ActiveRecord::Schema.define(version: 20200317051014) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "skill1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.string   "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skill2s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.string   "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skill3s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.string   "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skill4s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.string   "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skill5s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.string   "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "user_joins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "jointype_id"
@@ -126,9 +161,11 @@ ActiveRecord::Schema.define(version: 20200317051014) do
     t.string   "sex",                                    null: false
     t.string   "age",                                    null: false
     t.string   "area",                                   null: false
-    t.string   "industry",                               null: false
-    t.string   "skill",                                  null: false
-    t.string   "performance",                            null: false
+    t.string   "performance1"
+    t.string   "performance2"
+    t.string   "performance3"
+    t.string   "performance4"
+    t.string   "performance5"
     t.string   "introduce",                              null: false
     t.string   "project",                                null: false
     t.string   "want_to_do",                             null: false
@@ -138,6 +175,16 @@ ActiveRecord::Schema.define(version: 20200317051014) do
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.integer  "category_id"
+    t.integer  "skill1_id"
+    t.integer  "skill2_id"
+    t.integer  "skill3_id"
+    t.integer  "skill4_id"
+    t.integer  "skill5_id"
+    t.string   "skill1_period"
+    t.string   "skill2_period"
+    t.string   "skill3_period"
+    t.string   "skill4_period"
+    t.string   "skill5_period"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -145,6 +192,11 @@ ActiveRecord::Schema.define(version: 20200317051014) do
     t.datetime "updated_at",                             null: false
     t.boolean  "admin",                  default: false
     t.index ["category_id"], name: "index_users_on_category_id", using: :btree
+    t.index ["skill1_id"], name: "index_users_on_skill1_id", using: :btree
+    t.index ["skill2_id"], name: "index_users_on_skill2_id", using: :btree
+    t.index ["skill3_id"], name: "index_users_on_skill3_id", using: :btree
+    t.index ["skill4_id"], name: "index_users_on_skill4_id", using: :btree
+    t.index ["skill5_id"], name: "index_users_on_skill5_id", using: :btree
   end
 
   add_foreign_key "chats", "communities"
@@ -158,4 +210,9 @@ ActiveRecord::Schema.define(version: 20200317051014) do
   add_foreign_key "user_joins", "jointypes"
   add_foreign_key "user_joins", "users"
   add_foreign_key "users", "categories"
+  add_foreign_key "users", "skill1s"
+  add_foreign_key "users", "skill2s"
+  add_foreign_key "users", "skill3s"
+  add_foreign_key "users", "skill4s"
+  add_foreign_key "users", "skill5s"
 end
