@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations'
+  }
   root "messages#index"
   resources :users do
     collection do
       get 'category'
       get 'set_parent'
+      get "skill"
     end
   end
   resources :relationships, only: [:create, :destroy]

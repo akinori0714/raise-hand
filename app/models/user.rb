@@ -9,8 +9,7 @@ class User < ApplicationRecord
   validates :age, presence: true
   validates :introduce, presence: true
   validates :area, presence: true
-  validates :skill, presence: true
-  validates :performance, presence: true
+  validates :skill1, presence: true
 
   attachment :image
 
@@ -41,6 +40,11 @@ class User < ApplicationRecord
   end
 
   belongs_to :category
+  belongs_to :skill1
+  belongs_to :skill2
+  belongs_to :skill3
+  belongs_to :skill4
+  belongs_to :skill5
 
   def self.search(search) #ここでのself.はUser.を意味する
     if search
@@ -52,5 +56,9 @@ class User < ApplicationRecord
 
   has_many :dms, dependent: :destroy
   has_many :entries, dependent: :destroy
+  has_many :jointypes, through: :user_joins
+  has_many :user_joins
+  has_many :wanttodos
+  has_many :wanttomeets
   
 end

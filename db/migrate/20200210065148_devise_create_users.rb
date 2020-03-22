@@ -9,18 +9,30 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :sex,                null: false
       t.string :age,                null: false
       t.string :area,               null: false
-      t.string :industry,           null: false
-      t.string :skill,              null: false
-      t.string :performance,        null: false
+      t.string :performance1
+      t.string :performance2
+      t.string :performance3
+      t.string :performance4
+      t.string :performance5
       t.string :introduce,          null: false
-      t.string :project,            null: false
-      t.string :want_to_do,         null: false
-      t.string :want_to_meet,       null: false
-      t.string :join_type,          null: false
+      t.string :project,            null: false, array: true
+      t.string :want_to_do,         null: false, array: true
+      t.string :want_to_meet,       null: false, array: true
+      t.string :jointype,           null: false, array: true
       t.string :image_id,                        default: ""
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.references :category, foreign_key: true
+      t.references :skill1, foreign_key: true
+      t.references :skill2, foreign_key: true
+      t.references :skill3, foreign_key: true
+      t.references :skill4, foreign_key: true
+      t.references :skill5, foreign_key: true
+      t.string :skill1_period
+      t.string :skill2_period
+      t.string :skill3_period
+      t.string :skill4_period
+      t.string :skill5_period
 
       ## Recoverable
       t.string   :reset_password_token

@@ -60,26 +60,26 @@
           %tr
             %td スキル
             %td
-              = current_user.skill
+              = current_user.skill1.name
         %tbody
           %tr
             %td 実績
             %td
-              = current_user.performance
+              = current_user.performance1
         %tbody
           %tr
             %td やりたいこと
             %td
-              = current_user.want_to_do
+              = @wanttodos
         %tbody
           %tr
             %td 繋がりたい人
             %td
-              = current_user.want_to_meet
+              = @wanttomeets
         %tbody
           %tr
             %td 参加形態
             %td
-              = current_user.join_type
+              = @jointypes
 
 = render "shared/footer"

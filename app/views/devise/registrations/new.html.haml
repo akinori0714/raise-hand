@@ -42,6 +42,7 @@
             = f.label :地域
           .field-select
             = f.select :area, ["北海道", "青森", "岩手", "宮城", "秋田", "山形", "福島", "茨城", "栃木", "群馬", "埼玉", "東京", "神奈川", "千葉", "新潟", "富山", "石川", "福井", "山梨", "長野", "愛知", "岐阜", "三重", "滋賀", "京都", "大阪", "兵庫", "奈良", "和歌山", "鳥取", "島根", "岡山", "広島", "山口", "徳島", "香川", "愛媛", "高知", "福岡", "佐賀", "長崎", "熊本", "大分", "宮崎", "鹿児島", "沖縄"], prompt: "---"
+
         .field2
           %h3 必須
           .field2-label
@@ -50,56 +51,107 @@
             #large-category
               = f.collection_select(:category_id, Category.where(ancestry: nil), :id, :name, {prompt: "---"})
             #middle-category
-        .field
+
+        .field2
           %h3 必須
-          .field-label
-            = f.label :スキル
-          .field-input
-            = f.text_field :skill, autofocus: true
+          .field2-label
+            = f.label :スキル①（必須）
+          .field2-select
+            #large1-category
+              = f.collection_select(:skill1_id, Skill1.where(ancestry: nil), :id, :name, {prompt: "---"})
+            #middle1-category
+            #small1-category
+              = f.select :skill1_period, ["1年未満", "1年〜3年", "3年〜5年", "5年〜10年", "10年以上"], prompt: "---"
+          
+        .field2
+          .field2-label
+            = f.label :スキル②（任意）
+          .field2-select
+            #large2-category
+              = f.collection_select(:skill2_id, Skill2.where(ancestry: nil), :id, :name, {prompt: "---"})
+            #middle2-category
+            #small2-category
+              = f.select :skill2_period, ["1年未満", "1年〜3年", "3年〜5年", "5年〜10年", "10年以上"], prompt: "---"
+
+        .field2
+          .field2-label
+            = f.label :スキル③（任意）
+          .field2-select
+            #large3-category
+              = f.collection_select(:skill3_id, Skill3.where(ancestry: nil), :id, :name, {prompt: "---"})
+            #middle3-category
+            #small3-category
+              = f.select :skill3_period, ["1年未満", "1年〜3年", "3年〜5年", "5年〜10年", "10年以上"], prompt: "---"
+
+        .field2
+          .field2-label
+            = f.label :スキル④（任意）
+          .field2-select
+            #large4-category
+              = f.collection_select(:skill4_id, Skill4.where(ancestry: nil), :id, :name, {prompt: "---"})
+            #middle4-category
+            #small4-category
+              = f.select :skill4_period, ["1年未満", "1年〜3年", "3年〜5年", "5年〜10年", "10年以上"], prompt: "---"
+
+        .field2
+          .field2-label
+            = f.label :スキル⑤（必須）
+          .field2-select
+            #large5-category
+              = f.collection_select(:skill5_id, Skill5.where(ancestry: nil), :id, :name, {prompt: "---"})
+            #middle5-category
+            #small5-category
+              = f.select :skill5_period, ["1年未満", "1年〜3年", "3年〜5年", "5年〜10年", "10年以上"], prompt: "---"
+
         .field
           .field-label
-            = f.label :実績
+            = f.label :実績①（任意）
           .field-input
-            = f.text_field :performance, autofocus: true
+            = f.text_field :performance1, autofocus: true
+        
         .field
           .field-label
-            = f.label :興味あるプロジェクト
+            = f.label :実績②（任意）
           .field-input
-            = f.text_field :project
+            = f.text_field :performance2, autofocus: true
+        
         .field
+          .field-label
+            = f.label :実績③（任意）
+          .field-input
+            = f.text_field :performance3, autofocus: true
+        
+        .field
+          .field-label
+            = f.label :実績④（任意）
+          .field-input
+            = f.text_field :performance4, autofocus: true
+        
+        .field
+          .field-label
+            = f.label :実績⑤（任意）
+          .field-input
+            = f.text_field :performance5, autofocus: true
+
+        .field3
           %h3 必須
-          .field-label
+          .field3-label
             = f.label :参画形態
-          .field-select
-            - ["black","white","blue","brown"].each do |join_type|
-              = f.check_box :join_type, {multiple: true}, join_type, nil
-              = join_type
+          .field3-select
+            = f.collection_check_boxes :jointype, Jointype.all, :name, :name
 
-            -# = f.label :フルタイム
-            -# = f.check_box :join_type, id: :join_type_checkbox, value: "フルタイム"
-            -# = f.label :週末のみ
-            -# = f.check_box :join_type, id: :join_type_checkbox
-            -# = f.label :無給期間あり
-            -# = f.check_box :join_type, id: :join_type_checkbox
-            -# = f.label :報酬あり
-            -# = f.check_box :join_type, id: :join_type_checkbox
-            -# = f.label :参画形態は要相談
-            -# = f.check_box :join_type, id: :join_type_checkbox
-            -# = f.label :経営陣として参画したい
-            -# = f.check_box :join_type, id: :join_type_checkbox
-            -# = f.label :従業員として参画したい
-            -# = f.check_box :join_type, id: :join_type_checkbox
-
-        .field
-          .field-label
+        .field4
+          .field4-label
             = f.label :やってみたいこと
-          .field-input
-            = f.text_field :want_to_do
-        .field
-          .field-label
+          .field4-input
+            = f.collection_check_boxes :want_to_do, Wanttodo.all, :name, :name
+
+        .field4
+          .field4-label
             = f.label :繋がりたい人
-          .field-input
-            = f.text_field :want_to_meet
+          .field4-input
+            = f.collection_check_boxes :want_to_meet, Wanttomeet.all, :name, :name
+
         .field
           %h3 必須
           .field-label
