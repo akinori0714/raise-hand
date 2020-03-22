@@ -2,8 +2,6 @@
 
 .mypage
   .mypage__content
-    .mypage__content__background
-      = image_tag('default_backgroundimage.jpg', class: 'user-image')
     .mypage__content__icon
       - if @user.image.nil?
         = image_tag("default_icon.jpg", class: "user-image")
@@ -73,13 +71,13 @@
           %tr
             %td スキル
             %td
-              = @user.skill
+              = @user.skill1
         %tbody
           %tr
             %td 実績
             %td
-              = @user.performance
-        %tbody
+              = @user.performance1
+        %tbody1
           %tr
             %td やりたいこと
             %td
@@ -93,6 +91,6 @@
           %tr
             %td 参加形態
             %td
-              = @user.join_type
+              = @user.jointype
 
 = render "shared/footer"
