@@ -15,7 +15,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :performance4
       t.string :performance5
       t.string :introduce,          null: false
-      t.string :project,            null: false, array: true
       t.string :want_to_do,         null: false, array: true
       t.string :want_to_meet,       null: false, array: true
       t.string :jointype,           null: false, array: true
@@ -24,10 +23,10 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :encrypted_password, null: false, default: ""
       t.references :category, foreign_key: true
       t.references :skill1, foreign_key: true
-      t.references :skill2, foreign_key: true
-      t.references :skill3, foreign_key: true
-      t.references :skill4, foreign_key: true
-      t.references :skill5, foreign_key: true
+      t.references :skill2, foreign_key: true, null: true
+      t.references :skill3, foreign_key: true, null: true
+      t.references :skill4, foreign_key: true, null: true
+      t.references :skill5, foreign_key: true, null: true
       t.string :skill1_period
       t.string :skill2_period
       t.string :skill3_period

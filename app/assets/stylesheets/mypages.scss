@@ -44,6 +44,45 @@
         border-radius: 5px;
       }
     }
+    &__follow{
+      position: absolute;
+      top: 0px;
+      right: 50px;
+      .follows{
+        background-color: gold;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    }
+    &__dm{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      input{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        border: solid 3px gold;
+        border-radius: 300px;
+        padding: 5px;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      button{
+        display: none;
+      }
+      .dm-btn{
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+        border: solid 3px gold;
+        border-radius: 300px;
+        padding: 5px;
+        line-height: 35px;
+      }
+    }
     &__button{
       display: flex;
       position: absolute;
@@ -67,13 +106,14 @@
       }
     }
     table{
-      margin-top: 30px;
-      tr{
-        word-wrap: break-word;
-      }
+      margin-top: 60px;
       td{
         width: 700px;
         padding: 5px;
+        .introduce-tab{
+          white-space: pre-wrap;
+          word-wrap: break-word;
+        }
         .skill{
           display: flex;
           font-size: 14px;
@@ -105,41 +145,64 @@
     }
     &__tab2{
       margin-top: 10px;
-      display: flex;
       font-size: 14px;
       font-weight: bold;
       position: absolute;
       top: 130px;
       left: 300px;
-      &__name{
+      &__count{
+        position: absolute;
+        top: 0px;
+        left: 70px;
         margin-right: 20px;
         display: flex;
         p{
           margin-right: 20px;
         }
       }
+      &__name{
+        display: flex;
+        width: 395px;
+        overflow-x: auto;
+        white-space: nowrap;
+        .follow-image{
+          position: relative;
+          height: 50px;
+          width: 50px;
+          border-radius: 300px;
+          margin-right: 5px;
+        }
+      }
     }
     &__tab3{
-      margin-top: 20px;
-      h5{
-        margin: 10px;
-        font-weight: bold;
-        text-decoration: underline;
-        text-align: left;
-      }
-      table{
-        width: 100%;
-        margin-bottom: 40px;
-        th{
-          background-color: #e6eb94;
-          text-align: center;
-          font-weight: bold;
-          padding: 4px;
+      position: absolute;
+      top: 220px;
+      left: 300px;
+      font-size: 14px;
+      font-weight: bold;
+      &__count{
+        position: absolute;
+        top: 0px;
+        left: 80px;
+        margin-right: 20px;
+        display: flex;
+        p{
+          margin-right: 20px;
+          }
         }
-        td{
-          padding: 4px;
+        &__name{
+          display: flex;
+          width: 395px;
+          overflow-x: auto;
+          white-space: nowrap;
+          .follow-image{
+            position: relative;
+            height: 50px;
+            width: 50px;
+            border-radius: 300px;
+            margin-right: 5px;
+          }
         }
-      }
     }
   }
 }

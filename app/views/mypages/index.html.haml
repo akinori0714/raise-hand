@@ -23,14 +23,26 @@
           = icon('fas', 'envelope', class: "dm-btn")
     
     .mypage__content__tab2
+      %p フォロー
+      .mypage__content__tab2__count
+        = current_user.followings.count
       .mypage__content__tab2__name
-        %p フォロー
-        .mypage__content__tab2__name__count
-          = current_user.followings.count
-      .mypage__content__tab2__name
-        %p フォロワー
-        .mypage__content__tab2__name__count
-          = current_user.followers.count
+        - current_user.followings.each do |user|
+          - if user.image.nil?
+            = image_tag("default_icon.jpg", class: "follow-image")
+          - else
+            = attachment_image_tag user, :image, class: "follow-image"
+    
+    .mypage__content__tab3
+      %p フォロワー
+      .mypage__content__tab3__count
+        = current_user.followers.count
+      .mypage__content__tab3__name
+        - current_user.followers.each do |user|
+          - if user.image.nil?
+            = image_tag("default_icon.jpg", class: "follow-image")
+          - else
+            = attachment_image_tag user, :image, class: "follow-image"
 
     %table{border: "1"}
       %thead
@@ -60,7 +72,8 @@
       %tbody
         %tr
           %td
-            = current_user.introduce
+            .introduce-tab
+              = current_user.introduce
       %thead
         %tr
           %th スキル

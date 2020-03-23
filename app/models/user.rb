@@ -9,7 +9,6 @@ class User < ApplicationRecord
   validates :age, presence: true
   validates :introduce, presence: true
   validates :area, presence: true
-  validates :skill1, presence: true
 
   attachment :image
 
@@ -41,10 +40,10 @@ class User < ApplicationRecord
 
   belongs_to :category
   belongs_to :skill1
-  belongs_to :skill2
-  belongs_to :skill3
-  belongs_to :skill4
-  belongs_to :skill5
+  belongs_to :skill2, optional: true
+  belongs_to :skill3, optional: true
+  belongs_to :skill4, optional: true
+  belongs_to :skill5, optional: true
 
   def self.search(search) #ここでのself.はUser.を意味する
     if search
